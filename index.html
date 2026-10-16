@@ -1,175 +1,535 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#202d3e"><title>早日退休管理局 · 四人限定</title><style>
-:root{--ink:#293343;--navy:#222f43;--cream:#fff6e6;--line:#46516a;--yellow:#ffd886;--pink:#f4a8a5;--mint:#a5dbb4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3e9d5;color:var(--ink);font-family:ui-monospace,"SFMono-Regular",Menlo,"Microsoft YaHei",monospace;font-size:14px}button,select,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.shell{max-width:1240px;margin:auto;padding:24px 20px 70px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}.eyebrow{font-size:11px;letter-spacing:2px;color:#69758a;font-weight:900}.title{font-size:clamp(28px,5vw,54px);letter-spacing:1px;margin:5px 0;color:#233348;text-shadow:3px 3px 0 #fff}.tagline{margin:0;color:#626d77}.date{background:#fffdf5;border:3px solid #293343;box-shadow:5px 5px 0 #293343;padding:12px 16px;font-weight:900;line-height:1.45;min-width:250px;text-align:right}.panel{background:#fff9ec;border:3px solid #303d52;box-shadow:5px 5px 0 #303d52;padding:20px;margin-bottom:26px}.panel h2{margin:0 0 6px;font-size:19px}.sub{color:#77808b;font-size:12px;margin:0 0 16px}.game{background:#263448;color:#fff7e7;border:4px solid #142338;box-shadow:7px 7px 0 #142338;padding:14px;margin-bottom:28px}.gamebar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 5px 14px;font-size:11px;color:#d8ddb9;flex-wrap:wrap}.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.room{border:3px solid #142338;background:#4f7880;position:relative;overflow:hidden;cursor:pointer;border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.12)}.room canvas{width:100%;aspect-ratio:1.55;display:block;image-rendering:auto;background:#d7e4ea}.roomfoot{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:10px 12px;background:#344054;color:#fff2d1;min-height:52px}.roomname{font-weight:900;font-size:15px}.roomstatus{color:#bdc9d7;font-size:11px;text-align:right;max-width:65%}.room:hover{outline:3px solid #ffdb85}.ticker{padding:12px 13px;margin-top:14px;background:#3c4a61;border:2px solid #55667d;color:#fff1c5;min-height:48px;line-height:1.6}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.rankline{padding:12px 0;border-bottom:2px dashed #ddd4c4}.ranktop{display:flex;justify-content:space-between;gap:10px;font-weight:900}.ranknote{font-size:11px;color:#707883;margin-top:5px}.track{height:11px;background:#e4decf;border:2px solid #3b4757;margin-top:10px}.fill{height:100%;background:#80bca4}.btn{display:inline-flex;align-items:center;justify-content:center;border:3px solid #2f3d51;background:#ffda88;color:#293343;box-shadow:3px 3px 0 #2f3d51;padding:9px 13px;font-weight:900;transition:transform .12s,box-shadow .12s}.btn:hover{background:#ffe8aa}.btn:active{transform:translate(3px,3px);box-shadow:none}.btn.secondary{background:#e9ecdf}.btn.danger{background:#f4adab}.buttons{display:flex;gap:9px;flex-wrap:wrap}.who{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}.who .btn{min-width:70px;background:#f5f0df}.who .btn.active{background:#a5d8c5}.events{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.eventbtn{background:#fff1d3;text-align:left;min-height:92px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}.eventbtn small{font-size:12px;color:#7a6971}.toast{background:#27374d;color:#fce7b6;padding:14px;margin-top:15px;line-height:1.8;min-height:48px}.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.award{background:#f4efdd;border:2px solid #dacdb8;padding:14px;min-height:112px}.award b{display:block;margin:6px 0}.award span{font-size:12px;color:#727a84}.timeline{display:flex;flex-direction:column;gap:10px;max-height:450px;overflow:auto}.log{border-left:5px solid #e0a26b;background:#f5efdf;padding:10px 14px}.log small{color:#81818b}.log p{margin:4px 0}.utility{display:flex;gap:10px;flex-wrap:wrap}.muted{color:#77818e;font-size:12px;line-height:1.7}.footer{text-align:center;color:#777f8a;margin-top:28px;line-height:1.8}.modal{position:fixed;inset:0;background:#142032db;z-index:15;display:flex;align-items:center;justify-content:center;padding:14px}.modal[hidden],.cover[hidden]{display:none!important}.modalbox{width:min(980px,100%);max-height:94vh;overflow:auto;background:#fff7e5;border:4px solid #1f3046;box-shadow:8px 8px 0 #0d1725;padding:18px}.modalbox canvas{width:100%;image-rendering:auto;display:block;background:#eef4f8;border-radius:14px}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.modalbody{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.8fr);gap:16px;align-items:start}.sceneWrap{background:#dce5e4;border:3px solid #263649;padding:8px}.sidecol{display:flex;flex-direction:column;gap:12px}.portraitcard{background:#f0ead7;border:3px solid #263649;padding:12px}.avatar{width:160px;height:160px;image-rendering:auto;border:3px solid #253648;background:#c9d8d1;margin:0 auto 10px}.portraittitle{font-size:12px;color:#66717f;text-align:center}.detailcard{background:#fffaf0;border:3px solid #263649;padding:12px}.cover{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 35%,#435778,#1f2b40 73%);color:#fff1ce;text-align:center}.coverbox{border:5px double #b2c9b5;width:min(660px,100%);padding:clamp(20px,5vw,45px);background:#24364dcc;box-shadow:10px 10px 0 #121d2d}.cover .eyebrow{color:#b1d9ba}.cover h1{font-size:clamp(29px,7vw,63px);line-height:1.2;color:#ffe49d;margin:20px 0;text-shadow:4px 4px 0 #a36a73}.pixels{font-size:clamp(30px,6vw,56px);letter-spacing:12px;margin:25px 0}.start{font-size:18px;padding:16px 24px;margin:20px}.stamp{border:4px solid #e3a9a3;color:#e3a9a3;transform:rotate(-7deg);padding:14px 18px;font-size:22px;font-weight:900;display:inline-block}.hiddenInput{display:none}.help{margin-top:8px}.stat{background:#f1e9d6;padding:8px 10px;border:2px solid #d6ceb8;margin:8px 0}.badge{background:#f3b6ac;color:#59393f;padding:4px 7px;font-size:11px}.split{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.mini{font-size:11px;color:#c1d3d4}.notice{background:#e4f0df;padding:12px;border:2px solid #8eb4a2;margin:12px 0}.hidden{display:none!important}@media(max-width:720px){.shell{padding:16px 11px 50px}.panel{padding:14px;box-shadow:4px 4px 0 #303d52;margin-bottom:18px}.game{padding:8px;box-shadow:4px 4px 0 #142338}.rooms{gap:5px}.room{border-width:2px}.roomfoot{padding:6px;display:block;min-height:56px}.roomname{font-size:13px}.roomstatus{max-width:none;text-align:left;font-size:9px;margin-top:4px}.grid2{grid-template-columns:1fr;gap:0}.events{grid-template-columns:repeat(2,1fr)}.eventbtn{min-height:88px}.top{margin-bottom:18px}.pixels{letter-spacing:2px}.date{font-size:11px}.room canvas{aspect-ratio:1.3}.modalbody{grid-template-columns:1fr}.avatar{width:112px;height:112px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#263752"><title>早日退休管理局｜四位受害者</title><style>
+:root{--ink:#2b3242;--sub:#727b8c;--navy:#263752;--cream:#fffaf2;--line:#e6ddd2;--pink:#ffe0d8;--mint:#d5ede0;--yellow:#fee5a0;--blue:#e4effe}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft Yahei",sans-serif;background:radial-gradient(ellipse at 12% 0,#fdf0e4,transparent 50%),radial-gradient(ellipse at 85% 20%,#eff1ff,transparent 45%),#faf7ef;font-size:14px}
+button,select{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible{outline:3px solid #667fb7;outline-offset:3px}button:disabled{opacity:.5;cursor:default}.wrapper{max-width:1260px;margin:auto;padding:31px 23px 80px}.header{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap;margin-bottom:22px}
+.eyebrow{font-size:11px;letter-spacing:2.4px;color:#75947f;font-weight:850}.header h1{font-size:clamp(30px,4vw,52px);letter-spacing:-1.2px;margin:5px 0 7px;font-weight:950;color:#263752}.header p{margin:0;color:var(--sub);font-size:14px;line-height:1.7}.dayplate{padding:14px 19px;border:1px solid #e2d7c8;background:#fffef9;border-radius:18px;box-shadow:0 8px 18px #695e4811;min-width:260px}.daydate{font-weight:850;font-size:17px}.dayquote{font-size:12px;color:#bd6a76;margin-top:5px;font-weight:750;line-height:1.5}
+.timers{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:13px;margin:18px 0 23px}.timer-intro,.timer{border-radius:20px;box-shadow:0 9px 19px #39475f12;min-width:0}.timer-intro{background:#2c3d59;color:#fff6e7;padding:20px 23px;display:flex;flex-direction:column;justify-content:center;gap:6px}.timer-intro b{font-size:18px}.timer-intro span{font-size:12px;color:#bfcbcf;line-height:1.55}.timer{background:#fffcf7;padding:18px 22px;border:1px solid #eae1d9;display:flex;flex-direction:column;justify-content:space-between;gap:7px}.timer .time-label{color:#858b97;font-weight:800;font-size:12px}.timer strong{font-variant-numeric:tabular-nums;font-family:ui-monospace,"SFMono-Regular",monospace;font-size:clamp(21px,2.6vw,32px);letter-spacing:1px}.timer small{font-size:12px;color:#888a96}.timer:nth-child(2) strong{color:#b47d5c}.timer:nth-child(3) strong{color:#577f70}
+.scene-section{background:#fffef9;border:1px solid #eae0d5;border-radius:28px;padding:19px;box-shadow:0 17px 48px #5b52601a;margin-bottom:28px}.scene-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:1px 5px 17px}.scene-head h2{font-size:21px;margin:0}.scene-head span{color:#8a90a0;font-size:12px}.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.room-card{display:block;text-align:left;overflow:hidden;padding:0;border-radius:22px;background:#fff;border:1px solid #e5e1df;box-shadow:0 8px 22px #40526a0d;transition:transform .25s ease,box-shadow .25s ease;width:100%;min-width:0;color:inherit}.room-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px #40526a1c}.art{position:relative;aspect-ratio:640/410;overflow:hidden}.room-svg{display:block;width:100%;height:100%;overflow:hidden}.room-foot{padding:13px 16px 15px;display:flex;justify-content:space-between;gap:12px;align-items:center;background:#fff}.room-person{font-weight:900;font-size:17px}.person-age{font-size:11px;font-weight:600;color:#9da1a5;margin-left:4px}.room-sub{font-size:12px;color:#7b8290;margin-top:3px}.view{color:#829f97;background:#eef6ef;padding:7px 10px;border-radius:999px;font-weight:750;font-size:11px;white-space:nowrap}
+.work-person{animation:workBob 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 90%}.room-card:nth-child(2) .work-person{animation-delay:-.6s}.room-card:nth-child(3) .work-person{animation-delay:-1.3s}.room-card:nth-child(4) .work-person{animation-delay:-1.8s}.hand-left{animation:typeA .27s ease-in-out infinite alternate;transform-origin:329px 311px}.hand-right{animation:typeB .23s ease-in-out infinite alternate;transform-origin:368px 311px}.cursor-blink{animation:blink 1.05s steps(2,end) infinite}.season-effect{animation:floaty 6s ease-in-out infinite}.event-toast{position:absolute;left:50%;top:23%;transform:translate(-50%,10px);padding:11px 16px;border-radius:15px;background:#283955e9;color:#fff;font-weight:850;font-size:14px;box-shadow:0 8px 24px #18263855;opacity:0;pointer-events:none;max-width:85%;text-align:center;transition:opacity .2s,transform .2s}.room-card.show-event .event-toast{opacity:1;transform:translate(-50%,0)}.room-card.event-breakdown .work-person,.room-card.event-overtime .work-person{animation:shake .18s infinite}.room-card.event-fish .work-person{animation:floaty .9s infinite}.night .room-svg{filter:brightness(.82) saturate(.85)}
+@keyframes typeA{from{transform:translateY(0)}to{transform:translateY(3px)}}@keyframes typeB{from{transform:translateY(3px)}to{transform:translateY(-1px)}}@keyframes workBob{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}@keyframes blink{0%,48%{opacity:1}49%,100%{opacity:0}}@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}@keyframes shake{0%,100%{transform:translateX(-2px)}50%{transform:translateX(2px)}}
+.broadcast{background:#314460;border-radius:17px;padding:15px 19px;display:flex;gap:13px;align-items:center;justify-content:space-between;margin-top:18px;color:#fff5e7;line-height:1.7}.broadcast b{color:#ffda9c;white-space:nowrap}.broadcast span{flex:1;font-size:13px}.broadcast button{white-space:nowrap;border:1px solid #8eabc3;background:#455b77;color:#fff;padding:8px 12px;border-radius:10px;font-size:12px}.small-actions{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:16px 2px 0;color:#808994;font-size:12px}
+.btn{border:0;border-radius:12px;background:#293c58;color:white;padding:11px 15px;font-weight:800;box-shadow:0 4px 0 #1a293e;transition:transform .12s,box-shadow .12s}.btn:active{transform:translateY(3px);box-shadow:none}.btn.light{background:#edf1e9;color:#334759;box-shadow:0 4px 0 #ccd8cf}.btn.sun{background:#ffe3a1;color:#3b3540;box-shadow:0 4px 0 #c5a76c}.btn.danger{background:#f4e0dd;color:#914e4e;box-shadow:0 4px 0 #ddb7b2}.btn.tiny{padding:7px 10px;font-size:12px;border-radius:9px;box-shadow:none}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.panel{background:#fffefb;border:1px solid #e9e1d8;border-radius:23px;padding:23px;box-shadow:0 10px 29px #4d51680c;margin-bottom:20px;min-width:0}.panel h2{font-size:20px;margin:0 0 5px}.panel .sub{font-size:12px;color:#8a909c;line-height:1.6;margin:0 0 17px}.rankline{padding:13px 0;border-top:1px dashed #e7e2da}.rankline:first-child{border:0}.ranktop{display:flex;justify-content:space-between;gap:9px;font-size:14px;font-weight:800}.ranktop .value{color:#57667a;font-size:12px;white-space:nowrap}.ranknote{color:#9a9eaa;font-size:12px;margin-top:7px}.track{height:10px;background:#f1eee8;border-radius:99px;overflow:hidden;margin-top:12px}.fill{height:100%;background:linear-gradient(90deg,#a2d6c0,#6dbaa0);border-radius:99px}.muted{color:#8b919b;line-height:1.75;font-size:12px}.picker{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 18px}.picker button{border:1px solid #e0e5dd;background:#f4f5ed;border-radius:999px;padding:9px 20px;font-weight:850;color:#6b7d76}.picker button.active{background:#2c455c;color:#fff;border-color:#2c455c}.events{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.event{border:1px solid #e8e4df;background:#fffaf2;border-radius:16px;padding:17px;display:flex;align-items:center;gap:12px;text-align:left;min-height:79px;transition:background .2s,transform .2s}.event:hover{background:#fff0d8;transform:translateY(-2px)}.event-icon{width:38px;height:38px;border-radius:12px;background:#f2e9d8;display:grid;place-items:center;font-size:20px;flex-shrink:0}.event b{display:block;font-size:14px}.event small{display:block;margin-top:4px;color:#b08673;font-size:12px}.feedback{background:#eff7ee;border-radius:14px;padding:13px 15px;color:#52745d;font-size:13px;margin-top:16px;line-height:1.65}
+.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.award{background:#faf6ee;border:1px solid #eee7dc;border-radius:15px;padding:15px}.award .ico{font-size:26px}.award b{display:block;margin:8px 0 4px}.award small{color:#7e8992;font-size:12px}.timeline{max-height:450px;overflow:auto;display:flex;flex-direction:column;gap:11px}.log{border-left:4px solid #e7b58c;background:#fbf7ef;padding:11px 14px;border-radius:0 10px 10px 0}.log p{margin:5px 0;font-size:13px}.log small{color:#8e929c;font-size:12px}.notice{background:#f1f7ed;padding:13px;border-radius:12px;color:#5f806c;font-size:12px}.utility{display:flex;gap:11px;flex-wrap:wrap;margin:15px 0}.file-input{display:none}.footer{margin-top:23px;text-align:center;line-height:1.8;color:#9a9ca3;font-size:12px}
+.cover{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:radial-gradient(circle at 50% 25%,#61738e,#24334d 70%);padding:18px}.cover[hidden]{display:none}.cover-inner{border:2px solid #b7cfbd;border-radius:26px;text-align:center;width:min(620px,100%);background:#2d3d58;padding:35px 22px 37px;box-shadow:0 28px 90px #101c2a88;color:#fff}.cover h1{font-size:clamp(35px,7vw,54px);line-height:1.15;color:#ffe7a8;margin:16px 0 12px}.cover .latin{letter-spacing:3px;font-size:11px;color:#bdd5c1}.cover p{line-height:1.75;color:#d8e0e3;font-size:14px}.cover p strong{color:#ffbca9}.cover-avatars{display:flex;gap:10px;justify-content:center;margin:25px 0}.cover-avatars svg{width:clamp(62px,15vw,95px);height:clamp(74px,17vw,106px);background:#f7f2e6;border-radius:15px;border:3px solid #d3cdb8;overflow:hidden}.cover .btn{font-size:18px;padding:15px 28px}.cover-foot{color:#aebfcd!important;font-size:11px!important;margin-bottom:0}
+.modal{border:0;border-radius:24px;padding:0;width:min(1020px,calc(100vw - 28px));max-height:min(92vh,920px);overflow:auto;box-shadow:0 26px 100px #141b3288;background:#fffaf1}.modal::backdrop{background:#172335b9;backdrop-filter:blur(5px)}.modal-header{display:flex;align-items:center;justify-content:space-between;padding:19px 22px;gap:12px;border-bottom:1px solid #e6ddd4}.modal-header h2{font-size:20px;margin:0}.modal-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(250px,.85fr);gap:18px;padding:20px}.modal-scene{min-width:0;border-radius:19px;overflow:hidden;align-self:start}.modal-scene svg{display:block;width:100%;height:auto}.modal-profile{min-width:0}.portrait-holder{height:270px;display:flex;align-items:center;justify-content:center;background:#f0ebe6;border:1px solid #eee2d4;border-radius:18px;overflow:hidden}.portrait-holder svg{height:270px;width:auto;display:block;max-width:100%}.profile-text{line-height:1.8;color:#5b6673}.profile-text b{color:#2b4054}.stats{background:#f4efe7;border-radius:12px;padding:13px;color:#626d77;font-size:13px}.modal-eventbuttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.modal-eventbuttons button{font-size:11px;padding:8px 10px;border:1px solid #e5d9c8;background:#fff6e6;color:#5c5866;border-radius:9px}
+.policy-editor[hidden]{display:none}.policy-editor{margin-top:11px;background:#f4f0e8;border-radius:13px;padding:12px}.policy-editor label{display:block;margin:10px 0}.policy-editor select{padding:5px 8px;border-radius:7px;border:1px solid #b7babb;background:#fff}
+@media(max-width:810px){.wrapper{padding:19px 14px 50px}.timers{grid-template-columns:repeat(2,minmax(0,1fr))}.timer-intro{grid-column:span 2;padding:14px 20px}.rooms{gap:9px}.scene-section{padding:10px}.room-foot{padding:11px}.room-sub{font-size:11px}.room-person{font-size:15px}.view{display:none}.duo{grid-template-columns:1fr}.events{grid-template-columns:repeat(2,1fr)}.modal-grid{grid-template-columns:1fr}.portrait-holder{height:220px}.portrait-holder svg{height:220px}.broadcast{flex-wrap:wrap}}
+@media(max-width:470px){.header h1{font-size:31px}.header{gap:12px}.dayplate{width:100%;min-width:0}.timer{padding:14px}.timer strong{font-size:22px}.scene-head{padding:8px 6px}.scene-head h2{font-size:18px}.room-foot{min-height:57px;padding:7px 7px 10px}.room-person{font-size:14px}.room-sub{font-size:10px;line-height:1.3}.person-age{font-size:9px}.room-card{border-radius:13px}.panel{padding:18px}.event{padding:11px;gap:7px;min-height:75px}.event-icon{width:29px;height:29px;font-size:17px}.event b{font-size:12px}.event small{font-size:10px}.cover-inner{padding:25px 12px}}
+@media(prefers-reduced-motion:reduce){.work-person,.typing-hand,.cursor-blink,.season-effect,.room-card{animation:none!important;transition:none!important}}
 </style></head><body>
-<div id="cover" class="cover" hidden><div class="coverbox"><div class="eyebrow">★ EARLY RETIREMENT SIMULATOR ★</div><h1>早日退休<br>管理局</h1><div class="pixels">💻 🍜 🧊 🪐</div><p>四位申请人的退休申请已完成初审。</p><p style="color:#f4abab;font-weight:900">审核结果：全部驳回。理由：出生太晚。</p><button class="btn start" id="start">▶ 开始坐牢</button><div class="mini">PRESS START TO SUFFER · 今日首次入狱</div></div></div>
-<main class="shell"><header class="top"><div><div class="eyebrow">EARLY RETIREMENT BUREAU / 004</div><h1 class="title">早日退休管理局</h1><p class="tagline">四个人，四台电脑，零个想上班的灵魂。</p></div><div class="date" id="today"></div></header>
-<section class="game" id="office"><div class="gamebar"><span>● 04 名成员 · 当前运行状态：精神离职申请中</span><span id="clock"></span></div><div class="rooms" id="rooms"></div><div class="ticker" id="ticker">系统初始化中……</div><div class="split" style="margin-top:12px"><span class="mini">点击任意房间：观察受害者近况 ↗</span><button class="btn secondary" id="strike">☠ 集体精神离职</button></div></section>
-<div class="grid2"><section class="panel"><h2>⏳ 谁先脱离苦海</h2><p class="sub">退休倒计时榜 · 根据出生年份和选定政策口径估算</p><div id="retireRanks"></div><p class="muted">仅按出生年份估算退休年份，不代表精确的法定退休日期或养老金领取资格。女性适用类别可在下方调整。</p><button class="btn secondary" id="policyToggle">⚙ 调整退休口径</button><div id="policyEditor" class="stat hidden"></div></section>
-<section class="panel"><h2>💀 谁更想逃离地球</h2><p class="sub">累计退休怨气榜 · 只计算本浏览器真实登记的事件</p><div id="scoreRanks"></div><p class="muted">本地存档各自独立；同一链接不代表同一份积分。</p></section></div>
-<section class="panel" id="register"><h2>🗃️ 牛马受害事件登记处</h2><p class="sub">选择一名受害者，点击事件即可记入本地存档，触发对应房间特殊动画和系统补刀。</p><div class="who" id="peoplePicker"></div><div class="events" id="eventButtons"></div><div class="toast" id="feedback">系统通报：目前没有足够证据证明任何人今天真正上过班。</div></section>
-<div class="grid2"><section class="panel"><h2>🏆 摆烂荣誉殿堂</h2><p class="sub">由实际事件记录自动授予；没有记录，就没有奖杯。</p><div class="awards" id="awards"></div></section><section class="panel"><h2>📜 人类劳动受难史</h2><p class="sub">仅保留真实登记的事件 · 最新在前</p><div class="timeline" id="timeline"></div></section></div>
-<section class="panel"><h2>💾 地下存档室</h2><p class="sub">数据仅保存在当前浏览器。换设备请手动备份与导入；不会自动上传到 GitHub。</p><div class="utility"><button class="btn" id="export">⬇ 导出我的存档</button><button class="btn secondary" id="import">⬆ 导入 / 合并存档</button><button class="btn secondary" id="undo">↶ 撤销本机最近登记</button></div><input id="file" class="hiddenInput" type="file" accept=".json,application/json"><p class="muted help">每条事件含唯一编号：可以把四个人的存档文件互相分享、逐个导入合并；重复记录会自动去重。导入前建议先导出备份。合并并不等于在线同步。</p><div class="buttons"><button class="btn danger" id="clear">清空本机事件记录</button></div></section>
-<footer class="footer">本局从未成功协助任何人提前退休。<br>© 早日退休管理局 · 非官方恶搞作品 · 完全静音运行</footer></main>
-<div class="modal" id="modal" hidden><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">档案</h2><button class="btn secondary" id="close">✕ 关闭</button></div><div class="modalbody"><div class="sceneWrap"><canvas id="bigScene" width="860" height="540"></canvas></div><div class="sidecol"><div class="portraitcard"><canvas class="avatar" id="avatar" width="160" height="160"></canvas><div class="portraittitle">正面卡通头像</div></div><div class="detailcard" id="detail"></div></div></div></div></div>
+<div id="cover" class="cover" hidden><div class="cover-inner"><div class="latin">★ EARLY RETIREMENT OFFICE ★</div><h1>早日退休<br>管理局</h1><div class="cover-avatars"><svg viewBox="20 35 190 190" aria-label="dmc 的头像" role="img"><rect width="230" height="275" fill="#d9efe3"/><g class="illustrated-person"><path d="M37 226 C39 195 68 186 95 187 L118 217 L139 185 C167 185 196 196 198 230 L207 275 L20 275Z" fill="#778871" stroke="#414c40" stroke-width="4"/><path d="M91 189 L111 228 L135 189 L139 272 L89 272Z" fill="#f3d4d5"/><path d="M48 210 L90 231 M184 207 L145 231" stroke="#a0ad91" stroke-width="4" opacity=".7"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e8b08e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e8b08e" stroke="#d99377" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- soft thick black hair, center part and gentle short layers -->
+ <path d="M55 126 C37 92 43 46 79 27 C103 12 145 15 169 42 C191 66 180 107 173 128 L159 117 L65 124Z" fill="#262b32"/>
+ <path d="M49 94 C43 42 68 19 103 19 C109 21 112 28 113 34 C128 21 150 26 169 46 C181 62 180 87 173 97 L157 78 C143 69 128 65 116 65 C102 64 82 70 65 80Z" fill="#272c32"/>
+ <path d="M59 74 C68 41 88 28 111 39 C105 51 93 65 72 79" fill="#373d42" opacity=".7"/>
+ <path d="M116 61 C130 39 151 42 166 66" fill="none" stroke="#42474a" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+ <path d="M65 106 C57 90 52 98 59 116 M162 103 C169 91 175 102 166 117" fill="none" stroke="#d4977c" stroke-width="5" stroke-linecap="round"/>
+ <path d="M76 104 Q90 98 101 103 M126 103 Q138 98 151 103" fill="none" stroke="#49312f" stroke-width="3.8" stroke-linecap="round"/>
+ <ellipse cx="89" cy="116" rx="12" ry="9" fill="#fffdf9"/><ellipse cx="139" cy="116" rx="12" ry="9" fill="#fffdf9"/>
+ <circle cx="91" cy="117" r="6.3" fill="#513b33"/><circle cx="140" cy="117" r="6.3" fill="#513b33"/><circle cx="93" cy="115" r="2.2" fill="#fff"/><circle cx="142" cy="115" r="2.2" fill="#fff"/>
+ <path d="M112 123 Q109 133 114 135" stroke="#bd806b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M99 149 Q114 157 129 149" stroke="#974e4a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+ <rect x="67" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <rect x="120" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <path d="M109 107 Q114 103 120 107 M66 103 L52 99 M162 103 L176 100" stroke="#54413f" stroke-width="4" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg><svg viewBox="20 35 190 190" aria-label="笋 的头像" role="img"><rect width="230" height="275" fill="#fff0d9"/><g class="illustrated-person"><path d="M25 244 Q26 203 58 193 Q88 185 110 206 Q132 184 166 194 Q197 208 204 244 L211 275 L19 275Z" fill="#fff9f2" stroke="#bba69e" stroke-width="3"/><path d="M75 197 Q110 217 145 197 L153 233 Q110 244 68 232Z" fill="#fffdf9" stroke="#d2c0b3" stroke-width="2"/><path d="M31 220 Q22 232 28 246 M197 220 Q207 229 199 246" stroke="#f3e7d9" stroke-width="12" fill="none"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#efb49a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#efb49a" stroke="#dd9883" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- deep brown flowing long hair and straight fringe -->
+ <path d="M51 101 C32 53 51 18 91 15 C130 5 162 23 176 58 C186 103 173 163 191 230 Q163 252 136 225 Q113 215 88 237 Q55 254 36 229 C53 194 39 139 51 101Z" fill="#302729"/>
+ <path d="M55 104 C45 49 61 24 109 19 C152 19 172 47 174 90 L162 92 Q151 75 134 77 Q111 84 90 77 Q69 75 58 93Z" fill="#3b3031"/>
+ <path d="M60 88 Q77 56 104 56 Q135 62 163 82 L163 87 Q149 89 141 87 Q122 92 109 88 Q96 93 83 90 Q69 94 60 91Z" fill="#292325"/>
+ <path d="M48 100 C47 144 49 190 39 224" stroke="#403133" stroke-width="13" stroke-linecap="round" fill="none"/>
+ <path d="M170 104 C170 151 174 194 187 223" stroke="#403133" stroke-width="15" stroke-linecap="round" fill="none"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#efb49a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 91 Q70 67 91 70 Q109 76 125 69 Q145 67 163 85 L160 95 Q143 90 126 91 Q107 94 93 90 Q78 93 60 97Z" fill="#302629"/>
+ <path d="M79 111 Q92 105 105 111 M126 112 Q138 106 151 113" stroke="#4a3032" stroke-width="2.9" fill="none" stroke-linecap="round"/>
+ <path d="M78 123 Q91 117 104 123 M125 124 Q138 117 150 124" stroke="#4c3434" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="92" cy="124" rx="9" ry="7" fill="#fffaf7"/><ellipse cx="137" cy="124" rx="9" ry="7" fill="#fffaf7"/>
+ <circle cx="93" cy="123" r="5.3" fill="#422d2e"/><circle cx="138" cy="123" r="5.3" fill="#422d2e"/><circle cx="95" cy="121" r="1.7" fill="#fff"/><circle cx="140" cy="121" r="1.7" fill="#fff"/>
+ <path d="M112 126 Q108 137 114 139" stroke="#ce8c78" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+ <path d="M102 155 Q113 161 127 154" stroke="#a75b5b" stroke-width="3" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg><svg viewBox="20 35 190 190" aria-label="雪 的头像" role="img"><rect width="230" height="275" fill="#deedff"/><g class="illustrated-person"><path d="M21 275 L27 222 Q34 190 79 189 L112 205 L151 189 Q195 191 202 224 L210 275Z" fill="#353946" stroke="#282b35" stroke-width="4"/><path d="M88 190 L112 220 L138 191" fill="#2c2e39" stroke="#686d76" stroke-width="2"/><path d="M25 258 L207 258" stroke="#444957" stroke-width="4"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e7b09a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e7b09a" stroke="#d9987d" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- side-parted wavy black shoulder-length hair -->
+ <path d="M48 107 C38 59 64 16 112 16 Q160 12 178 64 C186 100 170 153 185 229 Q164 238 142 221 Q116 214 85 238 Q49 239 37 217 C52 179 35 143 48 107Z" fill="#302d33"/>
+ <path d="M49 97 C39 54 65 21 110 17 C139 14 171 32 177 73 Q163 58 137 55 Q110 58 93 78 Q68 87 56 106Z" fill="#24242a"/>
+ <path d="M92 79 C108 38 134 32 163 46" fill="none" stroke="#484149" stroke-width="9" stroke-linecap="round"/>
+ <path d="M56 101 Q45 165 49 213" stroke="#3d373d" stroke-width="17" fill="none" stroke-linecap="round"/>
+ <path d="M164 103 Q175 161 170 221" stroke="#3d373d" stroke-width="16" fill="none" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#e7b09a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M61 91 C74 65 93 52 123 52 C104 71 85 86 61 94Z" fill="#2d292f"/><path d="M151 71 Q162 83 164 96 L159 100Z" fill="#2d292f"/>
+ <path d="M78 106 Q91 100 104 105 M124 106 Q137 100 152 107" stroke="#3b3034" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <path d="M77 123 Q90 117 103 122 M125 123 Q138 117 151 123" stroke="#46333a" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+ <ellipse cx="90" cy="122" rx="11" ry="7" fill="#fffaf7"/><ellipse cx="138" cy="122" rx="11" ry="7" fill="#fffaf7"/>
+ <circle cx="91" cy="122" r="5.7" fill="#403136"/><circle cx="139" cy="122" r="5.7" fill="#403136"/><circle cx="93" cy="120" r="2.2" fill="#fff"/><circle cx="141" cy="120" r="2.2" fill="#fff"/>
+ <path d="M111 126 Q108 137 115 141" stroke="#c18370" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+ <path d="M96 154 Q112 167 132 153" stroke="#a75f62" stroke-width="3.3" fill="none" stroke-linecap="round"/>
+ <path d="M103 159 Q115 163 126 158" stroke="#d58d90" stroke-width="2" fill="none"/>
+ 
+      </g></svg><svg viewBox="20 35 190 190" aria-label="小马 的头像" role="img"><rect width="230" height="275" fill="#eee3ff"/><g class="illustrated-person"><path d="M23 275 L27 228 Q35 196 75 188 Q102 188 112 209 Q129 185 159 188 Q197 194 205 227 L210 275Z" fill="#356b7a" stroke="#2b5362" stroke-width="4"/><path d="M87 189 L114 214 L142 190" fill="#b9d7e0" stroke="#87b6c0" stroke-width="3"/><path d="M30 245 L54 239 M175 238 L201 246" stroke="#5d94a0" stroke-width="5"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#dc9e7e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#dc9e7e" stroke="#c9876f" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- fluffy short brown wavy bob -->
+ <path d="M55 108 C30 93 39 51 62 38 C65 22 91 17 104 23 C123 6 151 23 156 32 C183 42 182 72 178 91 C191 117 169 150 151 157 L69 155 C50 145 41 131 55 108Z" fill="#58453e"/>
+ <path d="M53 85 C38 64 48 45 61 45 C57 28 81 20 95 30 C106 15 122 16 134 26 C152 14 177 39 171 55 C188 70 168 90 159 91 C143 76 128 71 116 74 C99 68 86 79 70 95Z" fill="#4e3e38"/>
+ <path d="M60 73 Q72 48 94 55 M96 45 Q120 32 141 48 M140 52 Q155 50 165 70" stroke="#765c50" stroke-width="7" fill="none" stroke-linecap="round"/>
+ <path d="M59 108 Q46 130 61 149 M163 104 Q179 131 160 148" fill="none" stroke="#5b473e" stroke-width="14" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#dc9e7e" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 89 Q67 64 89 62 Q108 58 118 67 Q140 54 164 79 L161 95 Q138 78 115 85 Q88 75 64 100Z" fill="#514038"/><path d="M61 113Q50 123 62 143 M162 112Q174 125 163 142" stroke="#534137" stroke-width="7" fill="none"/>
+ <path d="M76 108 Q87 102 100 109 M124 109 Q138 102 151 110" stroke="#463533" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="88" cy="121" rx="11" ry="8" fill="#fffaf7"/><ellipse cx="137" cy="121" rx="11" ry="8" fill="#fffaf7"/>
+ <circle cx="90" cy="121" r="5.9" fill="#3c3330"/><circle cx="139" cy="121" r="5.9" fill="#3c3330"/><circle cx="92" cy="119" r="2" fill="#fff"/><circle cx="140" cy="119" r="2" fill="#fff"/>
+ <path d="M111 128 Q110 137 117 140" stroke="#b57d67" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M103 157 Q115 153 128 157 Q117 163 103 157Z" fill="#bb746e"/>
+ <path d="M101 157 Q116 163 129 157" stroke="#98594f" stroke-width="1.6" fill="none"/>
+ <rect x="67" y="102" width="41" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <rect x="118" y="102" width="43" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <path d="M108 110 Q114 105 118 111 M67 110 L56 108 M161 110 L173 107" stroke="#7e858b" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg></div><p>经系统核查，四位申请人均已拥有成熟的退休意识。<br><strong>但退休申请仍被驳回。原因：出生年份过新。</strong></p><button class="btn sun" id="start">▶ 开始坐牢</button><p class="cover-foot">PRESS START TO SUFFER · 每天仅首次开场</p></div></div>
+<div class="wrapper"><header class="header"><div><div class="eyebrow">EARLY RETIREMENT OFFICE / FOUR FRIENDS</div><h1>早日退休管理局</h1><p>四个人、四台电脑，以及四份坚不可摧的退休幻想。</p></div><div class="dayplate"><div class="daydate" id="today">日期加载中</div><div class="dayquote" id="dayquote">今日继续工作，组织深感遗憾。</div></div></header>
+<section class="timers" aria-label="每日下班倒计时"><div class="timer-intro"><b>⌛ 距离暂时恢复自由</b><span>按设备本地时间计算 · 午休 11:30 · 下班 18:00<br>考勤不代表自愿，倒计时代表抗争。</span></div><div class="timer"><div class="time-label">☕ 午间短暂放风 · 11:30</div><strong id="lunchTime">--:--:--</strong><small id="lunchDesc">正在计算</small></div><div class="timer"><div class="time-label">🌇 当天刑满释放 · 18:00</div><strong id="offTime">--:--:--</strong><small id="offDesc">正在计算</small></div></section>
+<section class="scene-section" id="sceneSection"><div class="scene-head"><h2>正在观察四位不愿上班的人类</h2><span>🔴 四间独立办公室 · 点击放大</span></div><div class="rooms"><button class="room-card" data-room="0" type="button" aria-label="查看dmc的办公室"><div class="art"><svg class="room-svg" viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="dmc的卡通办公室：纸山办公室">
+      <defs>
+        <linearGradient id="wall0" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d7f0e5"/><stop offset="1" stop-color="#a9d6c0"/></linearGradient>
+        <linearGradient id="desk0" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eed7c4"/><stop offset="1" stop-color="#d4b192"/></linearGradient>
+        <filter id="shadow0" x="-25%" y="-25%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#344259" flood-opacity=".15"/></filter>
+        <clipPath id="clip0"><rect width="640" height="410" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#clip0)">
+        <rect width="640" height="410" fill="url(#wall0)"/>
+        <rect y="270" width="640" height="140" fill="#e3c5ac"/>
+        <path d="M0 270H640" stroke="#fff" stroke-opacity=".7" stroke-width="6"/>
+        <path d="M0 321 L640 321 M0 375 L640 375" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+        
+  <g><rect x="42" y="48" width="170" height="133" rx="18" fill="#b0d8be" stroke="#4b8070" stroke-width="4"/><rect x="58" y="62" width="140" height="105" rx="12" fill="#f4fbf2"/>
+  <path d="M124 62 V167 M58 121 H198" stroke="#9bc8ab" stroke-width="5"/><circle cx="168" cy="86" r="19" fill="#fbd991"/><path d="M58 153 Q103 118 149 154 T198 146 V166H58Z" fill="#c1dec6"/></g>
+  <g transform="translate(478 43)"><rect width="112" height="130" rx="14" fill="#fefbf1" stroke="#98b7a6" stroke-width="3"/><text x="16" y="25" font-size="13" font-weight="800" fill="#3f6655">待办事项</text><path d="M15 35H96" stroke="#bfd6c5" stroke-width="2"/><g stroke="#9aab9f" stroke-width="2"><rect x="17" y="49" width="14" height="14" rx="3" fill="#e3e6e0"/><path d="M44 56H96"/><rect x="17" y="76" width="14" height="14" rx="3" fill="#e3e6e0"/><path d="M44 83H96"/><rect x="17" y="103" width="14" height="14" rx="3" fill="#e3e6e0"/><path d="M44 110H96"/></g></g>
+  <g transform="translate(45 249)"><rect x="0" y="-31" width="148" height="28" rx="8" fill="#9aaf9c"/><rect x="10" y="-68" width="126" height="36" rx="6" fill="#f1e9d8" stroke="#d3bb9f" stroke-width="2"/><path d="M24 -56H103 M24 -46H116" stroke="#bea58e" stroke-width="3"/><rect x="23" y="-99" width="96" height="30" rx="5" fill="#fbf6e9" stroke="#d3bb9f"/><path d="M36 -89H102" stroke="#c4ab93" stroke-width="3"/></g>
+  <g transform="translate(505 232)"><rect x="0" y="0" width="84" height="54" rx="12" fill="#9aad9b"/><rect x="11" y="-25" width="62" height="35" rx="8" fill="#ebebe2" stroke="#bcb9b1" stroke-width="3"/><path d="M25 -13H62M25 -5H58" stroke="#a9ada4" stroke-width="3"/><circle cx="63" cy="30" r="4" fill="#e6dbb4"/></g>
+
+        <g class="work-person" transform="translate(204 97) scale(.92)"><g class="illustrated-person"><path d="M37 226 C39 195 68 186 95 187 L118 217 L139 185 C167 185 196 196 198 230 L207 275 L20 275Z" fill="#778871" stroke="#414c40" stroke-width="4"/><path d="M91 189 L111 228 L135 189 L139 272 L89 272Z" fill="#f3d4d5"/><path d="M48 210 L90 231 M184 207 L145 231" stroke="#a0ad91" stroke-width="4" opacity=".7"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e8b08e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e8b08e" stroke="#d99377" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- soft thick black hair, center part and gentle short layers -->
+ <path d="M55 126 C37 92 43 46 79 27 C103 12 145 15 169 42 C191 66 180 107 173 128 L159 117 L65 124Z" fill="#262b32"/>
+ <path d="M49 94 C43 42 68 19 103 19 C109 21 112 28 113 34 C128 21 150 26 169 46 C181 62 180 87 173 97 L157 78 C143 69 128 65 116 65 C102 64 82 70 65 80Z" fill="#272c32"/>
+ <path d="M59 74 C68 41 88 28 111 39 C105 51 93 65 72 79" fill="#373d42" opacity=".7"/>
+ <path d="M116 61 C130 39 151 42 166 66" fill="none" stroke="#42474a" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+ <path d="M65 106 C57 90 52 98 59 116 M162 103 C169 91 175 102 166 117" fill="none" stroke="#d4977c" stroke-width="5" stroke-linecap="round"/>
+ <path d="M76 104 Q90 98 101 103 M126 103 Q138 98 151 103" fill="none" stroke="#49312f" stroke-width="3.8" stroke-linecap="round"/>
+ <ellipse cx="89" cy="116" rx="12" ry="9" fill="#fffdf9"/><ellipse cx="139" cy="116" rx="12" ry="9" fill="#fffdf9"/>
+ <circle cx="91" cy="117" r="6.3" fill="#513b33"/><circle cx="140" cy="117" r="6.3" fill="#513b33"/><circle cx="93" cy="115" r="2.2" fill="#fff"/><circle cx="142" cy="115" r="2.2" fill="#fff"/>
+ <path d="M112 123 Q109 133 114 135" stroke="#bd806b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M99 149 Q114 157 129 149" stroke="#974e4a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+ <rect x="67" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <rect x="120" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <path d="M109 107 Q114 103 120 107 M66 103 L52 99 M162 103 L176 100" stroke="#54413f" stroke-width="4" fill="none" stroke-linecap="round"/>
+ 
+      </g></g>
+        <!-- front desk, objects do not cover face -->
+        <g filter="url(#shadow0)"><rect x="194" y="303" width="303" height="74" rx="20" fill="#755c58"/><rect x="194" y="292" width="303" height="73" rx="21" fill="url(#desk0)" stroke="#b78e78" stroke-width="3"/></g>
+        <rect x="213" y="339" width="85" height="11" rx="5.5" fill="#ddc6b7"/><rect x="381" y="339" width="95" height="11" rx="5.5" fill="#ddc6b7"/>
+        <!-- both hands typing, independently animated -->
+        <g class="typing-hand hand-left"><ellipse cx="317" cy="314" rx="25" ry="12" fill="#e8b08e" stroke="#d99377" stroke-width="2"/></g>
+        <g class="typing-hand hand-right"><ellipse cx="369" cy="314" rx="24" ry="12" fill="#e8b08e" stroke="#d99377" stroke-width="2"/></g>
+        <!-- right-side slim workstation monitor -->
+        <g><rect x="432" y="197" width="129" height="93" rx="13" fill="#344759"/><rect x="441" y="206" width="111" height="75" rx="8" fill="#bee6e1"/>
+          <rect x="441" y="206" width="111" height="14" rx="7" fill="#2b775c" opacity=".78"/>
+          <circle cx="451" cy="212.5" r="2.6" fill="#fff9ec"/><circle cx="459" cy="212.5" r="2.6" fill="#fff9ec"/>
+          <path d="M456 234H537 M456 246H519 M456 258H531" stroke="#6d999a" stroke-width="5" stroke-linecap="round"/>
+          <rect class="cursor-blink" x="526" y="244" width="7" height="5" rx="2" fill="#2b775c"/>
+          <path d="M489 290V305" stroke="#445468" stroke-width="7"/><rect x="465" y="305" width="47" height="8" rx="4" fill="#445468"/>
+        </g>
+        <!-- props on desk -->
+        <rect x="394" y="317" width="88" height="16" rx="8" fill="#e7edf1" stroke="#a1bac4" stroke-width="2"/><path d="M407 324H470" stroke="#adc6cc" stroke-width="3" stroke-linecap="round"/>
+        <g><ellipse cx="232" cy="314" rx="18" ry="6" fill="#ba9c8b" opacity=".32"/><path d="M218 283H245V313Q232 322 218 313Z" fill="#fffaf1" stroke="#b8a392" stroke-width="2"/><path d="M245 290Q267 289 256 306Q250 309 245 302" stroke="#b8a392" stroke-width="4" fill="none"/></g>
+        <g transform="translate(271 319) rotate(-6)"><rect x="-15" y="-17" width="40" height="25" rx="4" fill="#fffaf2"/><path d="M-7 -9H17 M-7 -2H12" stroke="#c8b29e" stroke-width="2.5"/></g>
+        <rect x="22" y="361" width="172" height="34" rx="17" fill="#fffdf8" opacity=".88"/>
+        <text x="38" y="383" font-size="17" font-weight="800" fill="#2b775c" font-family="PingFang SC,Microsoft Yahei,sans-serif">纸山办公室</text>
+        <g class="season-effect"><circle cx="607" cy="28" r="9" fill="#fff9e8" opacity=".72"/><circle cx="608" cy="28" r="3" fill="#f8d9a2"/></g>
+      </g>
+      </svg><div class="event-toast" aria-live="polite"></div></div><div class="room-foot"><div><div class="room-person">dmc <span class="person-age">2000年</span></div><div class="room-sub">单位在岗 · 文件长期合作伙伴</div></div><span class="view">查看档案 ↗</span></div></button><button class="room-card" data-room="1" type="button" aria-label="查看笋的办公室"><div class="art"><svg class="room-svg" viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="笋的卡通办公室：植物园工位">
+      <defs>
+        <linearGradient id="wall1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0d9"/><stop offset="1" stop-color="#f7d4b7"/></linearGradient>
+        <linearGradient id="desk1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eed7c4"/><stop offset="1" stop-color="#d6a989"/></linearGradient>
+        <filter id="shadow1" x="-25%" y="-25%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#344259" flood-opacity=".15"/></filter>
+        <clipPath id="clip1"><rect width="640" height="410" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#clip1)">
+        <rect width="640" height="410" fill="url(#wall1)"/>
+        <rect y="270" width="640" height="140" fill="#e7c9b0"/>
+        <path d="M0 270H640" stroke="#fff" stroke-opacity=".7" stroke-width="6"/>
+        <path d="M0 321 L640 321 M0 375 L640 375" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+        
+  <g><rect x="34" y="46" width="175" height="138" rx="18" fill="#e6ba9f" stroke="#c28b6f" stroke-width="4"/><rect x="48" y="60" width="148" height="109" rx="12" fill="#fff6e8"/><path d="M122 60V169 M48 124H196" stroke="#d9ad98" stroke-width="5"/><circle cx="164" cy="85" r="19" fill="#ffdd9b"/></g>
+  <g transform="translate(453 35)"><rect width="142" height="146" rx="16" fill="#f9e8d5" stroke="#c9a790" stroke-width="4"/><rect x="16" y="16" width="52" height="47" rx="8" fill="#f4beb9"/><path d="M27 36l12 11 20-24" stroke="#fff6ef" stroke-width="5" fill="none"/><rect x="78" y="17" width="49" height="46" rx="8" fill="#c9e1ca"/><path d="M87 31H116 M87 41H113" stroke="#8aaf92" stroke-width="4"/><rect x="16" y="79" width="108" height="46" rx="9" fill="#fffaf3"/><text x="25" y="104" font-size="16" font-weight="800" fill="#b47759">周五快到了！</text></g>
+  <g transform="translate(46 256)"><rect width="60" height="30" rx="8" fill="#d99c78"/><path d="M30 0V-52 M30 -42 C0 -70 -3 -41 30 -28 M30 -42 C65 -76 74 -43 30 -23 M29 -28 C3 -33 6 -11 30 -12 M30 -31 C64 -37 61 -10 30 -9" stroke="#4f9470" stroke-width="7" fill="none" stroke-linecap="round"/></g>
+  <g transform="translate(510 224)"><rect width="95" height="65" rx="12" fill="#f7e9d9" stroke="#d4b2a3" stroke-width="3"/><path d="M13 22H79 M13 34H68 M13 47H74" stroke="#cfac9a" stroke-width="4"/></g>
+
+        <g class="work-person" transform="translate(204 97) scale(.92)"><g class="illustrated-person"><path d="M25 244 Q26 203 58 193 Q88 185 110 206 Q132 184 166 194 Q197 208 204 244 L211 275 L19 275Z" fill="#fff9f2" stroke="#bba69e" stroke-width="3"/><path d="M75 197 Q110 217 145 197 L153 233 Q110 244 68 232Z" fill="#fffdf9" stroke="#d2c0b3" stroke-width="2"/><path d="M31 220 Q22 232 28 246 M197 220 Q207 229 199 246" stroke="#f3e7d9" stroke-width="12" fill="none"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#efb49a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#efb49a" stroke="#dd9883" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- deep brown flowing long hair and straight fringe -->
+ <path d="M51 101 C32 53 51 18 91 15 C130 5 162 23 176 58 C186 103 173 163 191 230 Q163 252 136 225 Q113 215 88 237 Q55 254 36 229 C53 194 39 139 51 101Z" fill="#302729"/>
+ <path d="M55 104 C45 49 61 24 109 19 C152 19 172 47 174 90 L162 92 Q151 75 134 77 Q111 84 90 77 Q69 75 58 93Z" fill="#3b3031"/>
+ <path d="M60 88 Q77 56 104 56 Q135 62 163 82 L163 87 Q149 89 141 87 Q122 92 109 88 Q96 93 83 90 Q69 94 60 91Z" fill="#292325"/>
+ <path d="M48 100 C47 144 49 190 39 224" stroke="#403133" stroke-width="13" stroke-linecap="round" fill="none"/>
+ <path d="M170 104 C170 151 174 194 187 223" stroke="#403133" stroke-width="15" stroke-linecap="round" fill="none"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#efb49a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 91 Q70 67 91 70 Q109 76 125 69 Q145 67 163 85 L160 95 Q143 90 126 91 Q107 94 93 90 Q78 93 60 97Z" fill="#302629"/>
+ <path d="M79 111 Q92 105 105 111 M126 112 Q138 106 151 113" stroke="#4a3032" stroke-width="2.9" fill="none" stroke-linecap="round"/>
+ <path d="M78 123 Q91 117 104 123 M125 124 Q138 117 150 124" stroke="#4c3434" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="92" cy="124" rx="9" ry="7" fill="#fffaf7"/><ellipse cx="137" cy="124" rx="9" ry="7" fill="#fffaf7"/>
+ <circle cx="93" cy="123" r="5.3" fill="#422d2e"/><circle cx="138" cy="123" r="5.3" fill="#422d2e"/><circle cx="95" cy="121" r="1.7" fill="#fff"/><circle cx="140" cy="121" r="1.7" fill="#fff"/>
+ <path d="M112 126 Q108 137 114 139" stroke="#ce8c78" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+ <path d="M102 155 Q113 161 127 154" stroke="#a75b5b" stroke-width="3" fill="none" stroke-linecap="round"/>
+ 
+      </g></g>
+        <!-- front desk, objects do not cover face -->
+        <g filter="url(#shadow1)"><rect x="194" y="303" width="303" height="74" rx="20" fill="#755c58"/><rect x="194" y="292" width="303" height="73" rx="21" fill="url(#desk1)" stroke="#b78e78" stroke-width="3"/></g>
+        <rect x="213" y="339" width="85" height="11" rx="5.5" fill="#ddc6b7"/><rect x="381" y="339" width="95" height="11" rx="5.5" fill="#ddc6b7"/>
+        <!-- both hands typing, independently animated -->
+        <g class="typing-hand hand-left"><ellipse cx="317" cy="314" rx="25" ry="12" fill="#efb49a" stroke="#dd9883" stroke-width="2"/></g>
+        <g class="typing-hand hand-right"><ellipse cx="369" cy="314" rx="24" ry="12" fill="#efb49a" stroke="#dd9883" stroke-width="2"/></g>
+        <!-- right-side slim workstation monitor -->
+        <g><rect x="432" y="197" width="129" height="93" rx="13" fill="#344759"/><rect x="441" y="206" width="111" height="75" rx="8" fill="#bee6e1"/>
+          <rect x="441" y="206" width="111" height="14" rx="7" fill="#b47347" opacity=".78"/>
+          <circle cx="451" cy="212.5" r="2.6" fill="#fff9ec"/><circle cx="459" cy="212.5" r="2.6" fill="#fff9ec"/>
+          <path d="M456 234H537 M456 246H519 M456 258H531" stroke="#6d999a" stroke-width="5" stroke-linecap="round"/>
+          <rect class="cursor-blink" x="526" y="244" width="7" height="5" rx="2" fill="#b47347"/>
+          <path d="M489 290V305" stroke="#445468" stroke-width="7"/><rect x="465" y="305" width="47" height="8" rx="4" fill="#445468"/>
+        </g>
+        <!-- props on desk -->
+        <rect x="394" y="317" width="88" height="16" rx="8" fill="#e7edf1" stroke="#a1bac4" stroke-width="2"/><path d="M407 324H470" stroke="#adc6cc" stroke-width="3" stroke-linecap="round"/>
+        <g><ellipse cx="232" cy="314" rx="18" ry="6" fill="#ba9c8b" opacity=".32"/><path d="M218 283H245V313Q232 322 218 313Z" fill="#fffaf1" stroke="#b8a392" stroke-width="2"/><path d="M245 290Q267 289 256 306Q250 309 245 302" stroke="#b8a392" stroke-width="4" fill="none"/></g>
+        <g transform="translate(271 319) rotate(-6)"><rect x="-15" y="-17" width="40" height="25" rx="4" fill="#fffaf2"/><path d="M-7 -9H17 M-7 -2H12" stroke="#c8b29e" stroke-width="2.5"/></g>
+        <rect x="22" y="361" width="172" height="34" rx="17" fill="#fffdf8" opacity=".88"/>
+        <text x="38" y="383" font-size="17" font-weight="800" fill="#b47347" font-family="PingFang SC,Microsoft Yahei,sans-serif">植物园工位</text>
+        <g class="season-effect"><circle cx="607" cy="28" r="9" fill="#fff9e8" opacity=".72"/><circle cx="608" cy="28" r="3" fill="#f8d9a2"/></g>
+      </g>
+      </svg><div class="event-toast" aria-live="polite"></div></div><div class="room-foot"><div><div class="room-person">笋 <span class="person-age">2001年</span></div><div class="room-sub">单位在岗 · 下班研究员</div></div><span class="view">查看档案 ↗</span></div></button><button class="room-card" data-room="2" type="button" aria-label="查看雪的办公室"><div class="art"><svg class="room-svg" viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="雪的卡通办公室：安静角落工位">
+      <defs>
+        <linearGradient id="wall2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e5f4ff"/><stop offset="1" stop-color="#c1ddf3"/></linearGradient>
+        <linearGradient id="desk2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eed7c4"/><stop offset="1" stop-color="#a8c8dc"/></linearGradient>
+        <filter id="shadow2" x="-25%" y="-25%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#344259" flood-opacity=".15"/></filter>
+        <clipPath id="clip2"><rect width="640" height="410" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#clip2)">
+        <rect width="640" height="410" fill="url(#wall2)"/>
+        <rect y="270" width="640" height="140" fill="#d1dfea"/>
+        <path d="M0 270H640" stroke="#fff" stroke-opacity=".7" stroke-width="6"/>
+        <path d="M0 321 L640 321 M0 375 L640 375" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+        
+  <g><rect x="42" y="43" width="184" height="135" rx="18" fill="#b7d4eb" stroke="#7a9dbc" stroke-width="4"/><rect x="56" y="55" width="155" height="112" rx="13" fill="#eef8ff"/><path d="M135 55V167 M56 112H211" stroke="#9bbfdc" stroke-width="5"/><path d="M56 147 Q120 109 211 144V167H56Z" fill="#d4e9f4"/></g>
+  <g transform="translate(476 42)"><rect width="115" height="131" rx="14" fill="#f8fcff" stroke="#b3cee5" stroke-width="3"/><rect x="12" y="11" width="91" height="22" rx="7" fill="#94bbd7"/><text x="25" y="27" font-size="14" font-weight="800" fill="#fff">工作日历</text><g fill="#d2e3f2"><rect x="14" y="44" width="21" height="20" rx="5"/><rect x="44" y="44" width="21" height="20" rx="5"/><rect x="75" y="44" width="21" height="20" rx="5"/><rect x="14" y="75" width="21" height="20" rx="5"/><rect x="44" y="75" width="21" height="20" rx="5"/><rect x="75" y="75" width="21" height="20" rx="5"/></g><circle cx="85" cy="85" r="18" fill="none" stroke="#e58f95" stroke-width="4"/></g>
+  <g transform="translate(57 239)"><rect width="143" height="15" rx="7" fill="#92b8d4"/><rect x="13" y="-41" width="34" height="40" rx="6" fill="#fff" stroke="#b6c7d8" stroke-width="2"/><rect x="53" y="-52" width="31" height="50" rx="6" fill="#d8e8f4"/><rect x="92" y="-37" width="37" height="35" rx="6" fill="#f0e7eb"/></g>
+  <g transform="translate(511 229)"><rect width="83" height="52" rx="9" fill="#84a7be"/><rect x="12" y="12" width="60" height="29" rx="6" fill="#b7d3e8"/><path d="M21 22H56 M21 30H64" stroke="#fff" stroke-width="3"/></g>
+
+        <g class="work-person" transform="translate(204 97) scale(.92)"><g class="illustrated-person"><path d="M21 275 L27 222 Q34 190 79 189 L112 205 L151 189 Q195 191 202 224 L210 275Z" fill="#353946" stroke="#282b35" stroke-width="4"/><path d="M88 190 L112 220 L138 191" fill="#2c2e39" stroke="#686d76" stroke-width="2"/><path d="M25 258 L207 258" stroke="#444957" stroke-width="4"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e7b09a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e7b09a" stroke="#d9987d" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- side-parted wavy black shoulder-length hair -->
+ <path d="M48 107 C38 59 64 16 112 16 Q160 12 178 64 C186 100 170 153 185 229 Q164 238 142 221 Q116 214 85 238 Q49 239 37 217 C52 179 35 143 48 107Z" fill="#302d33"/>
+ <path d="M49 97 C39 54 65 21 110 17 C139 14 171 32 177 73 Q163 58 137 55 Q110 58 93 78 Q68 87 56 106Z" fill="#24242a"/>
+ <path d="M92 79 C108 38 134 32 163 46" fill="none" stroke="#484149" stroke-width="9" stroke-linecap="round"/>
+ <path d="M56 101 Q45 165 49 213" stroke="#3d373d" stroke-width="17" fill="none" stroke-linecap="round"/>
+ <path d="M164 103 Q175 161 170 221" stroke="#3d373d" stroke-width="16" fill="none" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#e7b09a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M61 91 C74 65 93 52 123 52 C104 71 85 86 61 94Z" fill="#2d292f"/><path d="M151 71 Q162 83 164 96 L159 100Z" fill="#2d292f"/>
+ <path d="M78 106 Q91 100 104 105 M124 106 Q137 100 152 107" stroke="#3b3034" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <path d="M77 123 Q90 117 103 122 M125 123 Q138 117 151 123" stroke="#46333a" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+ <ellipse cx="90" cy="122" rx="11" ry="7" fill="#fffaf7"/><ellipse cx="138" cy="122" rx="11" ry="7" fill="#fffaf7"/>
+ <circle cx="91" cy="122" r="5.7" fill="#403136"/><circle cx="139" cy="122" r="5.7" fill="#403136"/><circle cx="93" cy="120" r="2.2" fill="#fff"/><circle cx="141" cy="120" r="2.2" fill="#fff"/>
+ <path d="M111 126 Q108 137 115 141" stroke="#c18370" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+ <path d="M96 154 Q112 167 132 153" stroke="#a75f62" stroke-width="3.3" fill="none" stroke-linecap="round"/>
+ <path d="M103 159 Q115 163 126 158" stroke="#d58d90" stroke-width="2" fill="none"/>
+ 
+      </g></g>
+        <!-- front desk, objects do not cover face -->
+        <g filter="url(#shadow2)"><rect x="194" y="303" width="303" height="74" rx="20" fill="#755c58"/><rect x="194" y="292" width="303" height="73" rx="21" fill="url(#desk2)" stroke="#b78e78" stroke-width="3"/></g>
+        <rect x="213" y="339" width="85" height="11" rx="5.5" fill="#ddc6b7"/><rect x="381" y="339" width="95" height="11" rx="5.5" fill="#ddc6b7"/>
+        <!-- both hands typing, independently animated -->
+        <g class="typing-hand hand-left"><ellipse cx="317" cy="314" rx="25" ry="12" fill="#e7b09a" stroke="#d9987d" stroke-width="2"/></g>
+        <g class="typing-hand hand-right"><ellipse cx="369" cy="314" rx="24" ry="12" fill="#e7b09a" stroke="#d9987d" stroke-width="2"/></g>
+        <!-- right-side slim workstation monitor -->
+        <g><rect x="432" y="197" width="129" height="93" rx="13" fill="#344759"/><rect x="441" y="206" width="111" height="75" rx="8" fill="#bee6e1"/>
+          <rect x="441" y="206" width="111" height="14" rx="7" fill="#537aaf" opacity=".78"/>
+          <circle cx="451" cy="212.5" r="2.6" fill="#fff9ec"/><circle cx="459" cy="212.5" r="2.6" fill="#fff9ec"/>
+          <path d="M456 234H537 M456 246H519 M456 258H531" stroke="#6d999a" stroke-width="5" stroke-linecap="round"/>
+          <rect class="cursor-blink" x="526" y="244" width="7" height="5" rx="2" fill="#537aaf"/>
+          <path d="M489 290V305" stroke="#445468" stroke-width="7"/><rect x="465" y="305" width="47" height="8" rx="4" fill="#445468"/>
+        </g>
+        <!-- props on desk -->
+        <rect x="394" y="317" width="88" height="16" rx="8" fill="#e7edf1" stroke="#a1bac4" stroke-width="2"/><path d="M407 324H470" stroke="#adc6cc" stroke-width="3" stroke-linecap="round"/>
+        <g><ellipse cx="232" cy="314" rx="18" ry="6" fill="#ba9c8b" opacity=".32"/><path d="M218 283H245V313Q232 322 218 313Z" fill="#fffaf1" stroke="#b8a392" stroke-width="2"/><path d="M245 290Q267 289 256 306Q250 309 245 302" stroke="#b8a392" stroke-width="4" fill="none"/></g>
+        <g transform="translate(271 319) rotate(-6)"><rect x="-15" y="-17" width="40" height="25" rx="4" fill="#fffaf2"/><path d="M-7 -9H17 M-7 -2H12" stroke="#c8b29e" stroke-width="2.5"/></g>
+        <rect x="22" y="361" width="172" height="34" rx="17" fill="#fffdf8" opacity=".88"/>
+        <text x="38" y="383" font-size="17" font-weight="800" fill="#537aaf" font-family="PingFang SC,Microsoft Yahei,sans-serif">安静角落工位</text>
+        <g class="season-effect"><circle cx="607" cy="28" r="9" fill="#fff9e8" opacity=".72"/><circle cx="608" cy="28" r="3" fill="#f8d9a2"/></g>
+      </g>
+      </svg><div class="event-toast" aria-live="polite"></div></div><div class="room-foot"><div><div class="room-person">雪 <span class="person-age">2001年</span></div><div class="room-sub">单位在岗 · 精神远程办公</div></div><span class="view">查看档案 ↗</span></div></button><button class="room-card" data-room="3" type="button" aria-label="查看小马的办公室"><div class="art"><svg class="room-svg" viewBox="0 0 640 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="小马的卡通办公室：科研生存办公室">
+      <defs>
+        <linearGradient id="wall3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f0e6ff"/><stop offset="1" stop-color="#d5c5ef"/></linearGradient>
+        <linearGradient id="desk3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eed7c4"/><stop offset="1" stop-color="#bca4d2"/></linearGradient>
+        <filter id="shadow3" x="-25%" y="-25%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#344259" flood-opacity=".15"/></filter>
+        <clipPath id="clip3"><rect width="640" height="410" rx="24"/></clipPath>
+      </defs>
+      <g clip-path="url(#clip3)">
+        <rect width="640" height="410" fill="url(#wall3)"/>
+        <rect y="270" width="640" height="140" fill="#dac8de"/>
+        <path d="M0 270H640" stroke="#fff" stroke-opacity=".7" stroke-width="6"/>
+        <path d="M0 321 L640 321 M0 375 L640 375" stroke="#fff" stroke-opacity=".16" stroke-width="2"/>
+        
+  <g><rect x="39" y="43" width="183" height="142" rx="18" fill="#c1b7df" stroke="#9485c0" stroke-width="4"/><rect x="54" y="57" width="153" height="113" rx="13" fill="#eeeaff"/><circle cx="162" cy="89" r="18" fill="#f0dcaa"/><path d="M54 158 Q112 114 207 152 V170H54Z" fill="#cbc0e8"/></g>
+  <g transform="translate(470 38)"><rect width="130" height="143" rx="13" fill="#eee8fc" stroke="#b7a9d2" stroke-width="3"/><text x="15" y="25" font-size="14" font-weight="900" fill="#6d5999">科研进度</text><path d="M14 36H113" stroke="#c2b8de" stroke-width="2"/><path d="M20 103 L47 84 L68 97 L87 66 L111 48" stroke="#9a77cc" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="111" cy="48" r="5" fill="#e6a6ab"/><text x="21" y="123" font-size="12" fill="#7765a1">未知 × 不确定</text></g>
+  <g transform="translate(48 247)"><rect width="126" height="16" rx="8" fill="#bfa8d2"/><rect x="9" y="-40" width="26" height="40" rx="7" fill="#c0dee2"/><rect x="39" y="-55" width="32" height="56" rx="7" fill="#efc9d1"/><rect x="79" y="-46" width="37" height="46" rx="6" fill="#dac8ed"/><path d="M14 -24L23 -17 M45 -35L62 -35 M87 -20L106 -20" stroke="#fff" stroke-width="3"/></g>
+  <g transform="translate(511 228)"><rect width="90" height="53" rx="12" fill="#a796ce"/><rect x="12" y="8" width="18" height="35" rx="7" fill="#a6dace"/><rect x="37" y="-4" width="17" height="47" rx="7" fill="#e7adb8"/><rect x="61" y="15" width="18" height="28" rx="7" fill="#e3d7fa"/></g>
+
+        <g class="work-person" transform="translate(204 97) scale(.92)"><g class="illustrated-person"><path d="M23 275 L27 228 Q35 196 75 188 Q102 188 112 209 Q129 185 159 188 Q197 194 205 227 L210 275Z" fill="#356b7a" stroke="#2b5362" stroke-width="4"/><path d="M87 189 L114 214 L142 190" fill="#b9d7e0" stroke="#87b6c0" stroke-width="3"/><path d="M30 245 L54 239 M175 238 L201 246" stroke="#5d94a0" stroke-width="5"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#dc9e7e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#dc9e7e" stroke="#c9876f" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- fluffy short brown wavy bob -->
+ <path d="M55 108 C30 93 39 51 62 38 C65 22 91 17 104 23 C123 6 151 23 156 32 C183 42 182 72 178 91 C191 117 169 150 151 157 L69 155 C50 145 41 131 55 108Z" fill="#58453e"/>
+ <path d="M53 85 C38 64 48 45 61 45 C57 28 81 20 95 30 C106 15 122 16 134 26 C152 14 177 39 171 55 C188 70 168 90 159 91 C143 76 128 71 116 74 C99 68 86 79 70 95Z" fill="#4e3e38"/>
+ <path d="M60 73 Q72 48 94 55 M96 45 Q120 32 141 48 M140 52 Q155 50 165 70" stroke="#765c50" stroke-width="7" fill="none" stroke-linecap="round"/>
+ <path d="M59 108 Q46 130 61 149 M163 104 Q179 131 160 148" fill="none" stroke="#5b473e" stroke-width="14" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#dc9e7e" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 89 Q67 64 89 62 Q108 58 118 67 Q140 54 164 79 L161 95 Q138 78 115 85 Q88 75 64 100Z" fill="#514038"/><path d="M61 113Q50 123 62 143 M162 112Q174 125 163 142" stroke="#534137" stroke-width="7" fill="none"/>
+ <path d="M76 108 Q87 102 100 109 M124 109 Q138 102 151 110" stroke="#463533" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="88" cy="121" rx="11" ry="8" fill="#fffaf7"/><ellipse cx="137" cy="121" rx="11" ry="8" fill="#fffaf7"/>
+ <circle cx="90" cy="121" r="5.9" fill="#3c3330"/><circle cx="139" cy="121" r="5.9" fill="#3c3330"/><circle cx="92" cy="119" r="2" fill="#fff"/><circle cx="140" cy="119" r="2" fill="#fff"/>
+ <path d="M111 128 Q110 137 117 140" stroke="#b57d67" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M103 157 Q115 153 128 157 Q117 163 103 157Z" fill="#bb746e"/>
+ <path d="M101 157 Q116 163 129 157" stroke="#98594f" stroke-width="1.6" fill="none"/>
+ <rect x="67" y="102" width="41" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <rect x="118" y="102" width="43" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <path d="M108 110 Q114 105 118 111 M67 110 L56 108 M161 110 L173 107" stroke="#7e858b" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+ 
+      </g></g>
+        <!-- front desk, objects do not cover face -->
+        <g filter="url(#shadow3)"><rect x="194" y="303" width="303" height="74" rx="20" fill="#755c58"/><rect x="194" y="292" width="303" height="73" rx="21" fill="url(#desk3)" stroke="#b78e78" stroke-width="3"/></g>
+        <rect x="213" y="339" width="85" height="11" rx="5.5" fill="#ddc6b7"/><rect x="381" y="339" width="95" height="11" rx="5.5" fill="#ddc6b7"/>
+        <!-- both hands typing, independently animated -->
+        <g class="typing-hand hand-left"><ellipse cx="317" cy="314" rx="25" ry="12" fill="#dc9e7e" stroke="#c9876f" stroke-width="2"/></g>
+        <g class="typing-hand hand-right"><ellipse cx="369" cy="314" rx="24" ry="12" fill="#dc9e7e" stroke="#c9876f" stroke-width="2"/></g>
+        <!-- right-side slim workstation monitor -->
+        <g><rect x="432" y="197" width="129" height="93" rx="13" fill="#344759"/><rect x="441" y="206" width="111" height="75" rx="8" fill="#bee6e1"/>
+          <rect x="441" y="206" width="111" height="14" rx="7" fill="#8564ad" opacity=".78"/>
+          <circle cx="451" cy="212.5" r="2.6" fill="#fff9ec"/><circle cx="459" cy="212.5" r="2.6" fill="#fff9ec"/>
+          <path d="M456 234H537 M456 246H519 M456 258H531" stroke="#6d999a" stroke-width="5" stroke-linecap="round"/>
+          <rect class="cursor-blink" x="526" y="244" width="7" height="5" rx="2" fill="#8564ad"/>
+          <path d="M489 290V305" stroke="#445468" stroke-width="7"/><rect x="465" y="305" width="47" height="8" rx="4" fill="#445468"/>
+        </g>
+        <!-- props on desk -->
+        <rect x="394" y="317" width="88" height="16" rx="8" fill="#e7edf1" stroke="#a1bac4" stroke-width="2"/><path d="M407 324H470" stroke="#adc6cc" stroke-width="3" stroke-linecap="round"/>
+        <g><ellipse cx="232" cy="314" rx="18" ry="6" fill="#ba9c8b" opacity=".32"/><path d="M218 283H245V313Q232 322 218 313Z" fill="#fffaf1" stroke="#b8a392" stroke-width="2"/><path d="M245 290Q267 289 256 306Q250 309 245 302" stroke="#b8a392" stroke-width="4" fill="none"/></g>
+        <g transform="translate(271 319) rotate(-6)"><rect x="-15" y="-17" width="40" height="25" rx="4" fill="#fffaf2"/><path d="M-7 -9H17 M-7 -2H12" stroke="#c8b29e" stroke-width="2.5"/></g>
+        <rect x="22" y="361" width="172" height="34" rx="17" fill="#fffdf8" opacity=".88"/>
+        <text x="38" y="383" font-size="17" font-weight="800" fill="#8564ad" font-family="PingFang SC,Microsoft Yahei,sans-serif">科研生存办公室</text>
+        <g class="season-effect"><circle cx="607" cy="28" r="9" fill="#fff9e8" opacity=".72"/><circle cx="608" cy="28" r="3" fill="#f8d9a2"/></g>
+      </g>
+      </svg><div class="event-toast" aria-live="polite"></div></div><div class="room-foot"><div><div class="room-person">小马 <span class="person-age">2001年</span></div><div class="room-sub">在读研究生 · 预备退休人员</div></div><span class="view">查看档案 ↗</span></div></button></div><div class="broadcast"><b>📢 管理局广播</b><span id="ticker" aria-live="polite">检测到四台电脑在线，暂未检测到工作热情。</span><button id="changeQuote" type="button">再骂一句 ↻</button></div><div class="small-actions"><span>人物会持续敲键盘、偶尔摸鱼；登记事件后触发动画。</span><button class="btn light tiny" id="strike" type="button">☠ 集体精神离职（隐藏彩蛋）</button></div></section>
+<div class="duo"><section class="panel"><h2>⏳ 谁先脱离苦海</h2><p class="sub">政策口径估算的退休年份 · 按出生年份计算，不精确到生日</p><div id="retireRanks"></div><p class="muted">女性先暂按原55岁类别（延迟后58岁）估算，小马尚在读研，口径仅供娱乐。实际以届时适用的法定退休规定和个人岗位类别为准。</p><button class="btn light tiny" type="button" id="policyToggle">⚙ 调整估算类别</button><div id="policyEditor" class="policy-editor" hidden></div></section>
+<section class="panel"><h2>🏆 退休怨气排行榜</h2><p class="sub">只统计本机登记的事件；四人交换JSON存档后可合并排名</p><div id="scoreRanks"></div><p class="muted">不是自动联网排行榜。你们每个人独立保存，交换存档可以合并、去重。</p></section></div>
+<section class="panel" id="register"><h2>🗃️ 牛马受害事件登记处</h2><p class="sub">选一位幸运受害者，登记一次真实事件；对应角色会立即进入短暂精神异常状态。</p><div id="peoplePicker" class="picker"></div><div id="eventButtons" class="events"></div><div id="feedback" class="feedback" aria-live="polite">目前没有足够证据证明任何人今天认真上过班。</div></section>
+<div class="duo"><section class="panel"><h2>🏅 摆烂荣誉殿堂</h2><p class="sub">奖项只按已经记录的事件统计，不虚构战绩。</p><div id="awards" class="awards"></div></section><section class="panel"><h2>📜 人类劳动受难史</h2><p class="sub">真实时间线 · 最新记录优先 · 每条附赠系统补刀</p><div id="timeline" class="timeline"></div></section></div>
+<section class="panel"><h2>💾 地下存档室</h2><p class="sub">保存在浏览器本地；GitHub Pages不保存个人记录，也不支持设备间自动同步。</p><div class="utility"><button class="btn sun" id="export">↓ 导出我的记录</button><button class="btn light" id="import">↑ 导入 / 合并记录</button><button class="btn light" id="undo">↶ 撤销最近登记</button></div><input id="file" class="file-input" type="file" accept=".json,application/json"><p class="muted">兼容上一版存档。可以将4个人导出的JSON逐个导入，同一条事件只统计一次。更新网站不会主动清空原有浏览器记录，建议定期备份。</p><button class="btn danger tiny" id="clear">清空本机所有事件</button></section>
+<footer class="footer">早日退休管理局 · 四人限定恶搞网站 · 完全静音<br>本局致力于缩短大家的上班时间，但目前主要缩短大家的耐心。</footer></div>
+<dialog id="modal" class="modal"><div class="modal-header"><h2 id="modalTitle">人物档案</h2><button class="btn light tiny" id="close">✕ 关闭</button></div><div class="modal-grid"><div class="modal-scene" id="modalScene"></div><div class="modal-profile"><div id="modalPortrait" class="portrait-holder"></div><div id="detail" class="profile-text"></div></div></div></dialog>
+<template id="portrait-template-0"><svg class="full-portrait" viewBox="0 0 230 275" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="dmc 的卡通头像"><g class="illustrated-person"><path d="M37 226 C39 195 68 186 95 187 L118 217 L139 185 C167 185 196 196 198 230 L207 275 L20 275Z" fill="#778871" stroke="#414c40" stroke-width="4"/><path d="M91 189 L111 228 L135 189 L139 272 L89 272Z" fill="#f3d4d5"/><path d="M48 210 L90 231 M184 207 L145 231" stroke="#a0ad91" stroke-width="4" opacity=".7"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e8b08e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e8b08e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e8b08e" stroke="#d99377" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- soft thick black hair, center part and gentle short layers -->
+ <path d="M55 126 C37 92 43 46 79 27 C103 12 145 15 169 42 C191 66 180 107 173 128 L159 117 L65 124Z" fill="#262b32"/>
+ <path d="M49 94 C43 42 68 19 103 19 C109 21 112 28 113 34 C128 21 150 26 169 46 C181 62 180 87 173 97 L157 78 C143 69 128 65 116 65 C102 64 82 70 65 80Z" fill="#272c32"/>
+ <path d="M59 74 C68 41 88 28 111 39 C105 51 93 65 72 79" fill="#373d42" opacity=".7"/>
+ <path d="M116 61 C130 39 151 42 166 66" fill="none" stroke="#42474a" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+ <path d="M65 106 C57 90 52 98 59 116 M162 103 C169 91 175 102 166 117" fill="none" stroke="#d4977c" stroke-width="5" stroke-linecap="round"/>
+ <path d="M76 104 Q90 98 101 103 M126 103 Q138 98 151 103" fill="none" stroke="#49312f" stroke-width="3.8" stroke-linecap="round"/>
+ <ellipse cx="89" cy="116" rx="12" ry="9" fill="#fffdf9"/><ellipse cx="139" cy="116" rx="12" ry="9" fill="#fffdf9"/>
+ <circle cx="91" cy="117" r="6.3" fill="#513b33"/><circle cx="140" cy="117" r="6.3" fill="#513b33"/><circle cx="93" cy="115" r="2.2" fill="#fff"/><circle cx="142" cy="115" r="2.2" fill="#fff"/>
+ <path d="M112 123 Q109 133 114 135" stroke="#bd806b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M99 149 Q114 157 129 149" stroke="#974e4a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+ <rect x="67" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <rect x="120" y="97" width="42" height="39" rx="15" fill="#bdd6dc" fill-opacity=".12" stroke="#54413f" stroke-width="5"/>
+ <path d="M109 107 Q114 103 120 107 M66 103 L52 99 M162 103 L176 100" stroke="#54413f" stroke-width="4" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg></template><template id="portrait-template-1"><svg class="full-portrait" viewBox="0 0 230 275" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="笋 的卡通头像"><g class="illustrated-person"><path d="M25 244 Q26 203 58 193 Q88 185 110 206 Q132 184 166 194 Q197 208 204 244 L211 275 L19 275Z" fill="#fff9f2" stroke="#bba69e" stroke-width="3"/><path d="M75 197 Q110 217 145 197 L153 233 Q110 244 68 232Z" fill="#fffdf9" stroke="#d2c0b3" stroke-width="2"/><path d="M31 220 Q22 232 28 246 M197 220 Q207 229 199 246" stroke="#f3e7d9" stroke-width="12" fill="none"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#efb49a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#efb49a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#efb49a" stroke="#dd9883" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- deep brown flowing long hair and straight fringe -->
+ <path d="M51 101 C32 53 51 18 91 15 C130 5 162 23 176 58 C186 103 173 163 191 230 Q163 252 136 225 Q113 215 88 237 Q55 254 36 229 C53 194 39 139 51 101Z" fill="#302729"/>
+ <path d="M55 104 C45 49 61 24 109 19 C152 19 172 47 174 90 L162 92 Q151 75 134 77 Q111 84 90 77 Q69 75 58 93Z" fill="#3b3031"/>
+ <path d="M60 88 Q77 56 104 56 Q135 62 163 82 L163 87 Q149 89 141 87 Q122 92 109 88 Q96 93 83 90 Q69 94 60 91Z" fill="#292325"/>
+ <path d="M48 100 C47 144 49 190 39 224" stroke="#403133" stroke-width="13" stroke-linecap="round" fill="none"/>
+ <path d="M170 104 C170 151 174 194 187 223" stroke="#403133" stroke-width="15" stroke-linecap="round" fill="none"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#efb49a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 91 Q70 67 91 70 Q109 76 125 69 Q145 67 163 85 L160 95 Q143 90 126 91 Q107 94 93 90 Q78 93 60 97Z" fill="#302629"/>
+ <path d="M79 111 Q92 105 105 111 M126 112 Q138 106 151 113" stroke="#4a3032" stroke-width="2.9" fill="none" stroke-linecap="round"/>
+ <path d="M78 123 Q91 117 104 123 M125 124 Q138 117 150 124" stroke="#4c3434" stroke-width="2.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="92" cy="124" rx="9" ry="7" fill="#fffaf7"/><ellipse cx="137" cy="124" rx="9" ry="7" fill="#fffaf7"/>
+ <circle cx="93" cy="123" r="5.3" fill="#422d2e"/><circle cx="138" cy="123" r="5.3" fill="#422d2e"/><circle cx="95" cy="121" r="1.7" fill="#fff"/><circle cx="140" cy="121" r="1.7" fill="#fff"/>
+ <path d="M112 126 Q108 137 114 139" stroke="#ce8c78" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+ <path d="M102 155 Q113 161 127 154" stroke="#a75b5b" stroke-width="3" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg></template><template id="portrait-template-2"><svg class="full-portrait" viewBox="0 0 230 275" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="雪 的卡通头像"><g class="illustrated-person"><path d="M21 275 L27 222 Q34 190 79 189 L112 205 L151 189 Q195 191 202 224 L210 275Z" fill="#353946" stroke="#282b35" stroke-width="4"/><path d="M88 190 L112 220 L138 191" fill="#2c2e39" stroke="#686d76" stroke-width="2"/><path d="M25 258 L207 258" stroke="#444957" stroke-width="4"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#e7b09a"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#e7b09a"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#e7b09a" stroke="#d9987d" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- side-parted wavy black shoulder-length hair -->
+ <path d="M48 107 C38 59 64 16 112 16 Q160 12 178 64 C186 100 170 153 185 229 Q164 238 142 221 Q116 214 85 238 Q49 239 37 217 C52 179 35 143 48 107Z" fill="#302d33"/>
+ <path d="M49 97 C39 54 65 21 110 17 C139 14 171 32 177 73 Q163 58 137 55 Q110 58 93 78 Q68 87 56 106Z" fill="#24242a"/>
+ <path d="M92 79 C108 38 134 32 163 46" fill="none" stroke="#484149" stroke-width="9" stroke-linecap="round"/>
+ <path d="M56 101 Q45 165 49 213" stroke="#3d373d" stroke-width="17" fill="none" stroke-linecap="round"/>
+ <path d="M164 103 Q175 161 170 221" stroke="#3d373d" stroke-width="16" fill="none" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#e7b09a" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M61 91 C74 65 93 52 123 52 C104 71 85 86 61 94Z" fill="#2d292f"/><path d="M151 71 Q162 83 164 96 L159 100Z" fill="#2d292f"/>
+ <path d="M78 106 Q91 100 104 105 M124 106 Q137 100 152 107" stroke="#3b3034" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <path d="M77 123 Q90 117 103 122 M125 123 Q138 117 151 123" stroke="#46333a" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+ <ellipse cx="90" cy="122" rx="11" ry="7" fill="#fffaf7"/><ellipse cx="138" cy="122" rx="11" ry="7" fill="#fffaf7"/>
+ <circle cx="91" cy="122" r="5.7" fill="#403136"/><circle cx="139" cy="122" r="5.7" fill="#403136"/><circle cx="93" cy="120" r="2.2" fill="#fff"/><circle cx="141" cy="120" r="2.2" fill="#fff"/>
+ <path d="M111 126 Q108 137 115 141" stroke="#c18370" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+ <path d="M96 154 Q112 167 132 153" stroke="#a75f62" stroke-width="3.3" fill="none" stroke-linecap="round"/>
+ <path d="M103 159 Q115 163 126 158" stroke="#d58d90" stroke-width="2" fill="none"/>
+ 
+      </g></svg></template><template id="portrait-template-3"><svg class="full-portrait" viewBox="0 0 230 275" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="小马 的卡通头像"><g class="illustrated-person"><path d="M23 275 L27 228 Q35 196 75 188 Q102 188 112 209 Q129 185 159 188 Q197 194 205 227 L210 275Z" fill="#356b7a" stroke="#2b5362" stroke-width="4"/><path d="M87 189 L114 214 L142 190" fill="#b9d7e0" stroke="#87b6c0" stroke-width="3"/><path d="M30 245 L54 239 M175 238 L201 246" stroke="#5d94a0" stroke-width="5"/>
+      <rect x="101" y="162" width="28" height="40" rx="13" fill="#dc9e7e"/>
+      <ellipse cx="55" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <ellipse cx="170" cy="120" rx="13" ry="18" fill="#dc9e7e"/>
+      <path d="M55 93 C55 50 83 35 113 35 C147 35 173 62 169 110 C167 146 149 176 114 179 C80 176 56 149 55 109Z" fill="#dc9e7e" stroke="#c9876f" stroke-width="2"/>
+      <ellipse cx="80" cy="138" rx="15" ry="8" fill="#db837e" opacity=".18"/>
+      <ellipse cx="147" cy="138" rx="15" ry="8" fill="#db837e" opacity=".16"/>
+      
+ <!-- fluffy short brown wavy bob -->
+ <path d="M55 108 C30 93 39 51 62 38 C65 22 91 17 104 23 C123 6 151 23 156 32 C183 42 182 72 178 91 C191 117 169 150 151 157 L69 155 C50 145 41 131 55 108Z" fill="#58453e"/>
+ <path d="M53 85 C38 64 48 45 61 45 C57 28 81 20 95 30 C106 15 122 16 134 26 C152 14 177 39 171 55 C188 70 168 90 159 91 C143 76 128 71 116 74 C99 68 86 79 70 95Z" fill="#4e3e38"/>
+ <path d="M60 73 Q72 48 94 55 M96 45 Q120 32 141 48 M140 52 Q155 50 165 70" stroke="#765c50" stroke-width="7" fill="none" stroke-linecap="round"/>
+ <path d="M59 108 Q46 130 61 149 M163 104 Q179 131 160 148" fill="none" stroke="#5b473e" stroke-width="14" stroke-linecap="round"/>
+ <path d="M61 85 C66 52 88 49 114 50 C141 48 164 73 164 104 C164 143 149 173 113 178 C81 172 59 143 61 104Z" fill="#dc9e7e" stroke="#c88e79" stroke-width="1.5"/>
+<path d="M60 89 Q67 64 89 62 Q108 58 118 67 Q140 54 164 79 L161 95 Q138 78 115 85 Q88 75 64 100Z" fill="#514038"/><path d="M61 113Q50 123 62 143 M162 112Q174 125 163 142" stroke="#534137" stroke-width="7" fill="none"/>
+ <path d="M76 108 Q87 102 100 109 M124 109 Q138 102 151 110" stroke="#463533" stroke-width="3.1" fill="none" stroke-linecap="round"/>
+ <ellipse cx="88" cy="121" rx="11" ry="8" fill="#fffaf7"/><ellipse cx="137" cy="121" rx="11" ry="8" fill="#fffaf7"/>
+ <circle cx="90" cy="121" r="5.9" fill="#3c3330"/><circle cx="139" cy="121" r="5.9" fill="#3c3330"/><circle cx="92" cy="119" r="2" fill="#fff"/><circle cx="140" cy="119" r="2" fill="#fff"/>
+ <path d="M111 128 Q110 137 117 140" stroke="#b57d67" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <path d="M103 157 Q115 153 128 157 Q117 163 103 157Z" fill="#bb746e"/>
+ <path d="M101 157 Q116 163 129 157" stroke="#98594f" stroke-width="1.6" fill="none"/>
+ <rect x="67" y="102" width="41" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <rect x="118" y="102" width="43" height="39" rx="15" fill="#dce9eb" fill-opacity=".17" stroke="#7e858b" stroke-width="4.6"/>
+ <path d="M108 110 Q114 105 118 111 M67 110 L56 108 M161 110 L173 107" stroke="#7e858b" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+ 
+      </g></svg></template>
 <script>
 (()=>{'use strict';
-const PEOPLE=[{name:'dmc',year:2000,age:63,category:'男职工（63岁）',room:'文件海办公室',status:'文件已淹没工位',skin:'#edbd91',hair:'#252c39',shirt:'#7596be',style:'short',glasses:true},{name:'笋',year:2001,age:58,category:'女职工原55岁类别（58岁）',room:'泡面碗办公室',status:'持续泡发中',skin:'#f1be99',hair:'#402d2b',shirt:'#f3dc9c',style:'longbang',glasses:false},{name:'雪',year:2001,age:58,category:'女职工原55岁类别（58岁）',room:'冰山办公室',status:'冰川融化，考勤正常',skin:'#f0be9b',hair:'#2b252b',shirt:'#c4d1e6',style:'mid',glasses:false},{name:'小马',year:2001,age:58,category:'女职工原55岁类别（暂按58岁估算）',room:'宇宙实验室',status:'论文进度未知',skin:'#eab68f',hair:'#332a2c',shirt:'#e3b1c8',style:'curly',glasses:true}];
-const EVENTS=[{key:'overtime',icon:'⏰',name:'被迫加班',points:20,line:'恭喜，单位发现了一个不需要充电的永动机。'},{key:'fish',icon:'🐟',name:'成功摸鱼',points:10,line:'经过艰苦奋斗，该同志成功在工作时间没有工作。'},{key:'breakdown',icon:'💀',name:'精神崩溃',points:15,line:'检测到灵魂已离职，肉体仍在考勤范围。'},{key:'task',icon:'📁',name:'临时任务',points:12,line:'能者多劳，倒霉者更多劳。'},{key:'off',icon:'🌇',name:'准点下班',points:5,line:'该同志成功从单位临时赎回自己。'},{key:'vacation',icon:'🏖️',name:'休假成功',points:15,line:'经批准，该同志获准短暂体验人类生活。'}];
-const QUOTES=[['我感觉我和打印机产生了血缘关系。','打印机拒绝与你进行亲子鉴定。'],['我不是来上班的，我是来被生活焯水的。','该同志已泡发，但尚未达到退休标准。'],['冰川都快融化了，我还不能下班？','冰川可以提前融化，你不可以提前下班。'],['建议把我的毕业论文发射进黑洞，让它自己盲审。','该同志已具备退休能力，唯独不具备退休资格。']];
-const K='retire-office-v1',DAY='retire-office-entrance-day';let data,selected=0,focus=-1,animations={},noticeIndex=0,strikeUntil=0,openedToday=false;
-const el=id=>document.getElementById(id),dateKey=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
-const uniqueId=()=>Date.now().toString(36)+'-'+(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2));
-function load(){try{const x=JSON.parse(localStorage.getItem(K)||'{}');data={events:Array.isArray(x.events)?x.events.filter(validEvent):[],ages:Array.isArray(x.ages)&&x.ages.length===4?x.ages.map((v,i)=>[55,58,63].includes(v)?v:PEOPLE[i].age):PEOPLE.map(p=>p.age),lastId:x.lastId||null}}catch{data={events:[],ages:PEOPLE.map(p=>p.age),lastId:null}}}
-function validEvent(e){return e&&typeof e.id==='string'&&typeof e.who==='number'&&e.who>=0&&e.who<4&&EVENTS.some(x=>x.key===e.type)&&typeof e.at==='string'}
-function save(){try{localStorage.setItem(K,JSON.stringify(data))}catch{alert('本地存储失败，请导出存档或检查浏览器存储权限。')}}
-function scores(){const a=[0,0,0,0];for(const e of data.events){let x=EVENTS.find(v=>v.key===e.type);if(x)a[e.who]+=x.points}return a}
-function stampTime(s){const d=new Date(s);return isNaN(d)?'未知日期':d.toLocaleString('zh-CN',{hour12:false})}
+const PEOPLE=[{"name": "dmc", "year": 2000, "age": 63, "room": "纸山办公室", "subtitle": "单位在岗 · 文件长期合作伙伴", "note": "纸张消耗量疑似超越本人寿命。"}, {"name": "笋", "year": 2001, "age": 58, "room": "植物园工位", "subtitle": "单位在岗 · 下班研究员", "note": "日程排得很满，主要安排了不想上班。"}, {"name": "雪", "year": 2001, "age": 58, "room": "安静角落工位", "subtitle": "单位在岗 · 精神远程办公", "note": "业务照常办理，灵魂不参与讨论。"}, {"name": "小马", "year": 2001, "age": 58, "room": "科研生存办公室", "subtitle": "在读研究生 · 预备退休人员", "note": "科研方向：植物再生；人生方向：立刻下班。"}];
+const EVENTS=[{key:'overtime',icon:'⏰',name:'被迫加班',points:20,line:'单位使用该同志的生命维持办公设备运行。'},{key:'fish',icon:'🐟',name:'成功摸鱼',points:10,line:'经过艰苦奋斗，该同志成功在工作时间没有工作。'},{key:'breakdown',icon:'💀',name:'精神崩溃',points:15,line:'检测到灵魂已离职，肉体依然正常打卡。'},{key:'task',icon:'📁',name:'临时任务',points:12,line:'任务突然降临，像命运一样没有提前通知。'},{key:'off',icon:'🌇',name:'准点下班',points:5,line:'该同志暂时从单位赎回了自己。'},{key:'vacation',icon:'🏖️',name:'休假成功',points:15,line:'该同志短暂解锁了正常人类生活体验。'}];
+const QUOTES=[['我感觉我跟打印机之间已经有劳动关系了。','经核实，打印机工龄比你短，待遇还比你好。'],['我按下开机键的瞬间，就开始想下班。','电脑启动成功，工作积极性启动失败。'],['我只是坐得比较端正，不代表我喜欢这里。','该同志情绪稳定，主要是因为已经放弃解释。'],['论文要是能替我退休，我可以考虑再写一篇。','研究方向很有前景，研究者本人没什么精神。']];
+const WEEK_JOKES=['星期日：马上周一了，建议手机关机。','星期一：感觉灵魂被免费续费了五天。','星期二：以为撑过周一就好了，属实天真。','星期三：一周的夹心层，左右都是上班。','星期四：精神已经周五，身体还在周四。','星期五：今日最重要的科研课题——准点下班。','星期六：单位离你很远，请珍惜这种距离。'];
+const memLocal={},memSession={};
+const makeSafe=(name,mem)=>({getItem(k){try{return window[name].getItem(k)}catch(e){return Object.prototype.hasOwnProperty.call(mem,k)?mem[k]:null}},setItem(k,v){try{window[name].setItem(k,v)}catch(e){mem[k]=String(v)}}});
+const safeStorage=makeSafe('localStorage',memLocal),safeSession=makeSafe('sessionStorage',memSession);
+const K='retire-office-v1',DAY='retire-office-entrance-day';
+let data,selected=0,focus=-1,quoteIndex=0,eventTimers={},strikeTimeout=null;
+const el=id=>document.getElementById(id),dateKey=(d=new Date())=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+const randomId=()=>Date.now().toString(36)+'-'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2));
+function validEvent(e){return e&&typeof e.id==='string'&&Number.isInteger(e.who)&&e.who>=0&&e.who<4&&EVENTS.some(x=>x.key===e.type)&&typeof e.at==='string'&&Number.isFinite(Date.parse(e.at))}
+function load(){try{const x=JSON.parse(safeStorage.getItem(K)||'{}');data={events:Array.isArray(x.events)?x.events.filter(validEvent):[],ages:Array.isArray(x.ages)&&x.ages.length===4?x.ages.map((v,i)=>[55,58,63].includes(v)?v:PEOPLE[i].age):PEOPLE.map(p=>p.age),lastId:x.lastId||null}}catch(e){data={events:[],ages:PEOPLE.map(p=>p.age),lastId:null}}}
+function save(){try{safeStorage.setItem(K,JSON.stringify(data))}catch(e){alert('本地存储失败，请检查浏览器权限并导出备份。')}}
+function scores(){const a=[0,0,0,0];data.events.forEach(e=>{const x=EVENTS.find(v=>v.key===e.type);if(x)a[e.who]+=x.points});return a}
 function yearsLeft(i){return Math.max(0,PEOPLE[i].year+data.ages[i]-new Date().getFullYear())}
-function render(){const sc=scores();el('retireRanks').innerHTML=PEOPLE.map((p,i)=>({p,i,remaining:yearsLeft(i)})).sort((a,b)=>a.remaining-b.remaining||a.i-b.i).map((x,r)=>{let yr=x.p.year+data.ages[x.i],progress=Math.max(0,Math.min(100,(new Date().getFullYear()-x.p.year)/data.ages[x.i]*100));return `<div class="rankline"><div class="ranktop"><span>${r+1}. ${x.p.name}</span><span>${yr}年 · 约${x.remaining}年</span></div><div class="track"><div class="fill" style="width:${progress}%"></div></div><div class="ranknote">${data.ages[x.i]}周岁 · ${x.remaining?'退休资格仍在加载……':'已达估算年份 · 沙滩已解锁'}</div></div>`}).join('');el('scoreRanks').innerHTML=PEOPLE.map((p,i)=>({p,i,s:sc[i]})).sort((a,b)=>b.s-a.s||a.i-b.i).map((x,r)=>`<div class="rankline"><div class="ranktop"><span>${['🥇','🥈','🥉','04'][r]} ${x.p.name}</span><span>${x.s} 怨气</span></div><div class="track"><div class="fill" style="background:#edb18a;width:${Math.min(100,x.s/Math.max(100,...sc)*100)}%"></div></div><div class="ranknote">${x.s===0?'暂未留下劳动受害证据':'精神退休进度：持续恶化'}</div></div>`).join('');
-const awardDefs=[['🏆','牛马之王',e=>1],['🐟','带薪失踪人口',e=>e.type==='fish'?1:0],['⏰','加班重点关怀对象',e=>e.type==='overtime'?1:0],['💀','精神退休大师',e=>e.type==='breakdown'?1:0]];el('awards').innerHTML=awardDefs.map(([icon,name,fn],idx)=>{const a=[0,0,0,0];for(const e of data.events)a[e.who]+=idx===0?(EVENTS.find(v=>v.key===e.type)?.points||0):fn(e);let mx=Math.max(...a),winner=mx?PEOPLE[a.indexOf(mx)].name:'奖项空缺';return `<div class="award"><div style="font-size:24px">${icon}</div><b>${name}</b><span>${winner}${mx?' · '+mx+(idx===0?'分':'次'):' · 无有效证据'}</span></div>`}).join('');
-el('timeline').innerHTML=data.events.length?data.events.slice().sort((a,b)=>Date.parse(b.at)-Date.parse(a.at)).slice(0,100).map(e=>{let x=EVENTS.find(v=>v.key===e.type);return `<div class="log"><small>${stampTime(e.at)}</small><p><b>${PEOPLE[e.who].name}</b> · ${x.icon} ${x.name} +${x.points}</p><small>系统：${x.line}</small></div>`}).join(''):'<div class="notice">档案库空空如也。可能是四个人都没上班，也可能是证据被销毁了。</div>';el('undo').disabled=!data.events.some(e=>e.id===data.lastId);if(focus>=0)detail(focus)}
-function register(who,key){const x=EVENTS.find(e=>e.key===key);let entry={id:uniqueId(),who,type:key,at:new Date().toISOString()};data.events.push(entry);data.lastId=entry.id;save();animations[who]={type:key,until:performance.now()+3000};el('feedback').textContent=`【${PEOPLE[who].name} · ${x.name} +${x.points}】${x.line}`;el('ticker').textContent=`管理局紧急通报：${PEOPLE[who].name} ${x.name}。${x.line}`;render();if(key==='breakdown'&&PEOPLE.every((_,i)=>data.events.some(e=>e.who===i&&e.type==='breakdown'))&&!sessionStorage.getItem('all-breakdown')){sessionStorage.setItem('all-breakdown','1');setTimeout(strike,700)}}
-function detail(i){let p=PEOPLE[i],sc=scores()[i],counts=data.events.filter(e=>e.who===i).length;el('modalTitle').textContent=`档案 №00${i+1} · ${p.name}`;el('detail').innerHTML=`<p><b>${p.name}</b> · ${p.year}年生 · ${i===3?'在读研究生':'单位上班中'}</p><div class="stat">预计退休年份：${p.year+data.ages[i]}年（出生年份估算）<br>距离预计退休：约${yearsLeft(i)}年<br>累计退休怨气：${sc}分 · 有据可查 ${counts} 次</div><div class="notice">系统鉴定：${['长期与纸质材料展开肉搏，目前已逐步演化为会走路的归档柜。','泡在单位与泡面里都很久，唯一共同点是都没有真正熟透。','外表冷静，内里已经像冰面一样随时可能裂开。','还没正式入职，已经对未来上班生活形成了跨时空创伤。'][i]}</div><p class="muted">点击下面按钮可直接为该同志登记事件。</p><div class="buttons">${EVENTS.map(e=>`<button class="btn secondary" data-modal-event="${e.key}">${e.icon} ${e.name}</button>`).join('')}</div>`;el('detail').querySelectorAll('[data-modal-event]').forEach(b=>b.onclick=()=>register(i,b.dataset.modalEvent));drawScene(el('bigScene'),i,performance.now(),true);drawAvatar(el('avatar'),i)}
-function strike(){strikeUntil=performance.now()+4800;el('ticker').textContent='☠ 系统已集体精神离职。四台电脑同时蓝屏。经协商，系统成功挽留四具肉体，明天继续上班。';if(focus>=0)detail(focus)}
-
-function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(x,y,w,h)}
-function poly(c,coords,color){c.fillStyle=color;c.beginPath();coords.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();c.fill()}
-function rrect(c,x,y,w,h,r,fill,stroke){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);if(fill){c.fillStyle=fill;c.fill()} if(stroke){c.strokeStyle=stroke;c.stroke()}}
-function circle(c,x,y,r,fill,stroke){c.beginPath();c.arc(x,y,r,0,Math.PI*2);if(fill){c.fillStyle=fill;c.fill()} if(stroke){c.strokeStyle=stroke;c.stroke()}}
-function line(c,x1,y1,x2,y2,w,color){c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.lineWidth=w;c.strokeStyle=color;c.lineCap='round';c.stroke()}
-function shadow(c,blur=16,color='rgba(0,0,0,.14)',x=0,y=6){c.shadowBlur=blur;c.shadowColor=color;c.shadowOffsetX=x;c.shadowOffsetY=y}
-function clearShadow(c){c.shadowBlur=0;c.shadowColor='transparent';c.shadowOffsetX=0;c.shadowOffsetY=0}
-function human(c,i,t,scale=1,x=80,y=78,front=false){
-  const p=PEOPLE[i], bob=Math.sin(t/300+i)*2, blink=(Math.floor(t/1700+i)%5===0);
-  c.save(); c.translate(x,y+bob); c.scale(scale,scale);
-  // chair
-  if(!front){rrect(c,-22,24,20,24,8,['#6f8dab','#c9856b','#85a8c7','#8670ae'][i],'#3b4757');rect(c,-18,45,4,12,'#644d46');}
-  // torso
-  shadow(c,10,'rgba(0,0,0,.09)',0,4);
-  rrect(c,-18,2,36,38,12,p.shirt,'#3b4757');
-  clearShadow(c);
-  // arms
-  if(front){line(c,-16,16,-24,31,5,p.skin); line(c,16,16,24,31,5,p.skin);} else {line(c,-12,18,-28,31,5,p.skin); line(c,14,18,27,29+Math.sin(t/120)*3,5,p.skin);} 
-  // neck + head
-  rrect(c,-6,-6,12,10,4,p.skin);
-  circle(c,0,-18,16,p.skin);
-  // hair base
-  c.fillStyle=p.hair; c.beginPath();
-  if(p.style==='longbang'){c.moveTo(-18,-16);c.quadraticCurveTo(-16,-35,0,-34);c.quadraticCurveTo(16,-35,18,-15);c.lineTo(13,-2);c.quadraticCurveTo(10,10,14,18);c.lineTo(7,18);c.quadraticCurveTo(9,2,8,-2);c.lineTo(-8,-2);c.quadraticCurveTo(-9,4,-8,18);c.lineTo(-14,18);c.quadraticCurveTo(-10,8,-13,-2);c.closePath();c.fill(); rect(c,-10,-26,20,8,p.hair);} 
-  else if(p.style==='mid'){c.moveTo(-18,-15);c.quadraticCurveTo(-14,-36,0,-34);c.quadraticCurveTo(16,-35,18,-12);c.lineTo(14,16);c.lineTo(10,18);c.lineTo(10,1);c.lineTo(-10,1);c.lineTo(-11,18);c.lineTo(-15,16);c.closePath();c.fill();}
-  else if(p.style==='curly'){for(let dx of [-14,-7,0,7,14]) circle(c,dx,-29+(dx%2?1:0),6,p.hair); for(let dx of [-17,-12,12,17]) circle(c,dx,-20,6,p.hair); rect(c,-14,-26,28,12,p.hair);}
-  else {c.moveTo(-16,-14);c.quadraticCurveTo(-12,-34,0,-33);c.quadraticCurveTo(14,-34,16,-14);c.lineTo(12,-3);c.lineTo(-12,-3);c.closePath();c.fill();}
-  // fringe extras
-  if(p.style==='longbang'){rect(c,-9,-12,18,4,p.hair);}
-  if(p.style==='short'){rect(c,-8,-12,16,3,p.hair);}
-  // face
-  if(!blink){circle(c,-5,-18,1.6,'#312a2a');circle(c,5,-18,1.6,'#312a2a');} else {line(c,-8,-18,-3,-18,1.4,'#312a2a');line(c,3,-18,8,-18,1.4,'#312a2a');}
-  line(c,-3,-10,3,-10,1.5,'#b57873');
-  if(p.glasses){rrect(c,-11,-25,11,11,3,'transparent','#314153');rrect(c,0,-25,11,11,3,'transparent','#314153');line(c,0,-20,0,-20,1.5,'#314153');}
-  // front badge / laptop hands
-  if(front){rrect(c,-15,34,30,22,10,p.shirt,'#3b4757'); line(c,-12,44,-25,58,5,p.skin); line(c,12,44,25,58,5,p.skin);}
-  c.restore();
+function clockFmt(ms){const t=Math.max(0,Math.ceil(ms/1000));return [Math.floor(t/3600),Math.floor((t%3600)/60),t%60].map(x=>String(x).padStart(2,'0')).join(':')}
+function tick(){const d=new Date(),wd=d.getDay(),weekend=wd===0||wd===6;const label=['日','一','二','三','四','五','六'][wd];el('today').textContent=`${dateKey(d)} · 星期${label}`;el('dayquote').textContent=WEEK_JOKES[wd];
+  if(weekend){el('lunchTime').textContent='休息日';el('offTime').textContent='休息日';el('lunchDesc').textContent='今天不应该想起单位';el('offDesc').textContent='本局暂时解除劳动警报'}
+  else{const lunch=new Date(d);lunch.setHours(11,30,0,0);const off=new Date(d);off.setHours(18,0,0,0);el('lunchTime').textContent=d>=lunch?'已放风 ✓':clockFmt(lunch-d);el('lunchDesc').textContent=d>=lunch?'午饭时间已解锁':'工作时间按秒扣除';el('offTime').textContent=d>=off?'已下班 ✓':clockFmt(off-d);el('offDesc').textContent=d>=off?'恭喜暂时恢复人身自由':'请保持生命体征，坚持到18点';}
+  document.body.classList.toggle('night',d.getHours()<7||d.getHours()>=19);if(safeStorage.getItem(DAY)!==dateKey(d)&&el('cover').hidden){/* Only show cover on next page visit, not mid-session */}
 }
-function drawAvatar(can,i){
-  const c=can.getContext('2d'); c.imageSmoothingEnabled=true; const w=can.width,h=can.height; c.clearRect(0,0,w,h);
-  const grad=c.createLinearGradient(0,0,w,h); const sets=[['#d9efdf','#a3c8b0'],['#ffe7c3','#f2b987'],['#ddf3ff','#a8cde8'],['#eadfff','#c3b1e8']][i]; grad.addColorStop(0,sets[0]); grad.addColorStop(1,sets[1]); c.fillStyle=grad; c.fillRect(0,0,w,h);
-  for(let y=12;y<h;y+=18){c.strokeStyle='rgba(255,255,255,.28)'; c.beginPath(); c.moveTo(0,y); c.lineTo(w,y); c.stroke();}
-  rrect(c,10,10,w-20,h-20,18,'rgba(255,250,242,.72)','rgba(54,76,98,.22)');
-  human(c,i,0,2.9,w/2,h/2-8,true);
-  rrect(c,28,h-38,w-56,16,8,'#2c3d52'); c.fillStyle='#fff4d6'; c.font='600 12px system-ui, -apple-system, sans-serif'; c.textAlign='center'; c.fillText(PEOPLE[i].name,w/2,h-26);
+function announce(text){el('ticker').textContent=text}
+function cycleQuote(){let i=quoteIndex++%4;announce(`${PEOPLE[i].name}：「${QUOTES[i][0]}」　系统：「${QUOTES[i][1]}」`)}
+function render(){let sc=scores();el('retireRanks').innerHTML=PEOPLE.map((p,i)=>({i,p,left:yearsLeft(i)})).sort((a,b)=>a.left-b.left||a.i-b.i).map((x,r)=>{let y=x.p.year+data.ages[x.i],progress=Math.min(100,Math.max(0,(new Date().getFullYear()-x.p.year)/data.ages[x.i]*100));return `<div class="rankline"><div class="ranktop"><span>${r+1}. ${x.p.name}</span><span class="value">${y}年 · 约${x.left}年</span></div><div class="track"><div class="fill" style="width:${progress}%"></div></div><div class="ranknote">按${data.ages[x.i]}岁估算 · ${x.left===0?'已到估算年份，沙滩模式解锁':'退休审核状态：仍然驳回'}</div></div>`}).join('');
+ el('scoreRanks').innerHTML=PEOPLE.map((p,i)=>({i,p,s:sc[i]})).sort((a,b)=>b.s-a.s||a.i-b.i).map((x,r)=>`<div class="rankline"><div class="ranktop"><span>${['🥇','🥈','🥉','04'][r]} ${x.p.name}</span><span class="value">${x.s} 分</span></div><div class="track"><div class="fill" style="background:linear-gradient(90deg,#edc99f,#e2a190);width:${Math.min(100,x.s/Math.max(100,...sc)*100)}%"></div></div><div class="ranknote">${x.s===0?'目前没有上班受害证据':'劳动受害证据持续增加'}</div></div>`).join('');
+ const awards=[['🏆','牛马之王',null],['🐟','带薪失踪人口','fish'],['⏰','加班重点关怀对象','overtime'],['💀','精神退休大师','breakdown']];el('awards').innerHTML=awards.map(([icon,name,type])=>{const counts=[0,0,0,0];data.events.forEach(e=>{if(!type||e.type===type)counts[e.who]+=type?1:EVENTS.find(x=>x.key===e.type).points});const max=Math.max(...counts),i=counts.indexOf(max);return `<div class="award"><div class="ico">${icon}</div><b>${name}</b><small>${max?PEOPLE[i].name+' · '+max+(type?'次':'分'):'无人获奖 · 证据不足'}</small></div>`}).join('');
+ el('timeline').innerHTML=data.events.length?data.events.slice().sort((a,b)=>Date.parse(b.at)-Date.parse(a.at)).slice(0,100).map(e=>{const x=EVENTS.find(v=>v.key===e.type);return `<div class="log"><small>${new Date(e.at).toLocaleString('zh-CN',{hour12:false})}</small><p><b>${PEOPLE[e.who].name}</b> · ${x.icon} ${x.name}　+${x.points}</p><small>系统：${x.line}</small></div>`}).join(''):'<div class="notice">尚无劳动受害记录。建议不要为了获奖而主动加班。</div>';
+ el('undo').disabled=!data.events.some(e=>e.id===data.lastId);if(focus>=0)detail(focus);
 }
-function drawScene(canvas,i,t,large=false){
-  const c=canvas.getContext('2d'); c.imageSmoothingEnabled=true; const w=canvas.width,h=canvas.height; c.clearRect(0,0,w,h);
-  const now=new Date(), hr=now.getHours(), night=hr<7||hr>=19, season=Math.floor(now.getMonth()/3), wk=now.getDay();
-  const pal=[
-    {sky:['#dff4e6','#c8e5d5'],wall:['#eef8ec','#dbeecf'],floor:['#d8c3b6','#c2ab99'],accent:'#83b193'},
-    {sky:['#fff0d8','#ffd7b0'],wall:['#fff7ea','#fde7c9'],floor:['#e3c0a0','#cf9b72'],accent:'#f3a76b'},
-    {sky:['#e3f4ff','#c9e6fb'],wall:['#f4fbff','#e1f1fb'],floor:['#c9dcee','#9cb8d1'],accent:'#89bbe2'},
-    {sky:['#eee5ff','#d8ccff'],wall:['#f5f1ff','#ebe4ff'],floor:['#d8c3ec','#b6a2d6'],accent:'#a98bdd'}
-  ][i];
-  // sky/wall/floor
-  const g=c.createLinearGradient(0,0,0,h*0.7); g.addColorStop(0, night? '#2c3858':pal.sky[0]); g.addColorStop(1, night? '#48506f':pal.sky[1]); c.fillStyle=g; c.fillRect(0,0,w,h);
-  c.fillStyle=night? ['#48546d','#654f5b','#50627b','#51496e'][i] : pal.wall[0]; c.fillRect(0,0,w,h*0.65);
-  c.fillStyle=night? ['#8b9678','#c8895d','#94b8d5','#8470aa'][i] : pal.floor[0]; c.fillRect(0,h*0.65,w,h*0.35);
-  c.strokeStyle='rgba(255,255,255,.55)'; c.lineWidth=2; c.beginPath(); c.moveTo(0,h*0.65); c.lineTo(w,h*0.65); c.stroke();
-  // subtle stars / day elements
-  if(i===3 || night){ for(let s=0;s<14;s++){ circle(c,(s*67+13)%w,(s*41+18)%Math.max(50,h*0.34),s%4===0?2.1:1.2,'rgba(255,245,220,.95)'); }}
-  // room-specific back details
-  if(i===0){ rrect(c,20,22,72,56,12,'#6e84a6'); rect(c,34,34,12,30,'#d7ebcb'); rect(c,53,30,18,34,'#eeb7c0'); rect(c,75,39,6,21,'#c9bee2'); for(let k=0;k<5;k++) rrect(c,w-118+k*10,28+k%2,8,34,4,'#ddd0ef'); rrect(c,w-138,70,58,12,6,'#f7f0dd'); c.fillStyle='#927663'; c.font='600 10px system-ui'; c.fillText('退休申请',w-126,79); }
-  if(i===1){ rrect(c,24,25,92,18,9,'#cf6e55'); c.fillStyle='#fff4cf'; c.font='600 12px system-ui'; c.fillText('距离下班还有 999 分钟',32,38); rrect(c,w-120,18,84,64,16,'#8ec5b6'); rrect(c,w-108,28,60,44,14,'#d0efe5'); rrect(c,32,110,34,45,12,'#c47752'); circle(c,49,107,18,'#f4f0dd');}
-  if(i===2){ rrect(c,20,20,60,48,12,'#d8f4ff'); rect(c,30,28,8,24,'#f5ffff'); rect(c,46,31,6,20,'#b1daf0'); poly(c,[[w-120,108],[w-72,48],[w-12,118]],'#fbffff'); poly(c,[[w-154,118],[w-102,62],[w-54,118]],'#effaff'); for(let k=0;k<5;k++) rrect(c,28+k*22,142-k*4,16,6,3,'#f4fdff'); }
-  if(i===3){ rrect(c,26,22,58,66,12,'#66789b'); rect(c,36,34,9,38,'#c7ebd2'); rect(c,52,40,12,28,'#efbad2'); rect(c,68,48,10,18,'#d6c7ef'); rrect(c,w-128,18,86,76,18,'#7da0d0'); rrect(c,w-114,28,58,48,16,'#acd9c8'); }
-  // floor platform
-  shadow(c,18,'rgba(0,0,0,.12)',0,10);
-  poly(c,[[32,h-84],[w*0.48,h*0.36],[w-40,h-92],[w*0.56,h-12]], pal.floor[1]);
-  clearShadow(c);
-  poly(c,[[32,h-84],[w*0.56,h-12],[w*0.56,h-2],[32,h-72]], night?'rgba(0,0,0,.12)':'rgba(64,52,48,.22)');
-  poly(c,[[w*0.56,h-12],[w-40,h-92],[w-40,h-78],[w*0.56,h-2]], night?'rgba(0,0,0,.16)':'rgba(64,52,48,.18)');
-  // themed props on floor
-  if(i===0){for(let j=0;j<5;j++){rrect(c,46+j*20,106-j*10,34,26,4,'#ece1ba'); line(c,53+j*20,116-j*10,71+j*20,116-j*10,1,'#b9a28e')} rrect(c,w-110,114,28,22,4,'#cabca8');}
-  if(i===1){circle(c,86,153,42,'#f0d58e'); c.strokeStyle='#d7a85a'; c.lineWidth=4; for(let a=0;a<4;a++){c.beginPath(); c.arc(86,153,26+a*5,0.2,5.8); c.stroke();} rrect(c,w-118,92,26,34,10,'#bf7653'); rect(c,w-112,87,14,8,'#f2ecdd');}
-  if(i===2){for(let j=0;j<4;j++){ poly(c,[[52+j*18,145-j*3],[64+j*18,122-j*4],[76+j*18,145-j*3]], ['#f8ffff','#edf9ff'][j%2]); } poly(c,[[w-110,136],[w-84,104],[w-44,136]],'#f7feff');}
-  if(i===3){for(let j=0;j<5;j++) rrect(c,w-122+j*11,96+j%2*8,8,42,4,'#ede0f5'); rrect(c,34,136,24,12,6,'#f2cad1');}
-  // desk
-  shadow(c,20,'rgba(0,0,0,.16)',0,10);
-  poly(c,[[w*0.34,h-100],[w*0.57,h-148],[w*0.76,h-110],[w*0.53,h-62]], '#815f52');
-  poly(c,[[w*0.34,h-106],[w*0.57,h-154],[w*0.76,h-116],[w*0.53,h-68]], ['#c59e7d','#d8a06e','#a4c9dd','#c9b0dc'][i]);
-  clearShadow(c);
-  rect(c,w*0.38,h-66,10,48,'#6b5148'); rect(c,w*0.68,h-108,10,52,'#6b5148');
-  // monitor + keyboard + mug + papers
-  shadow(c,10,'rgba(0,0,0,.12)',0,4);
-  rrect(c,w*0.60,h-170,92,62,12,'#324258'); rrect(c,w*0.615,h-158,62,40,8,(strikeUntil>t)?'#6a8fcb':(night?'#a6d9df':'#b9efe6')); rect(c,w*0.615,h-158,62,8,'#6a8f93');
-  if(strikeUntil>t){line(c,w*0.625,h-137,w*0.665,h-137,3,'#f5f8ff'); line(c,w*0.625,h-126,w*0.657,h-126,3,'#f5f8ff');} else {for(let j=0;j<3;j++) line(c,w*0.626,h-138+j*11,w*0.68+j*6,h-138+j*11,3,'#6194a0');}
-  rect(c,w*0.655,h-108,8,16,'#324258');
-  poly(c,[[w*0.60,h-92],[w*0.67,h-122],[w*0.74,h-108],[w*0.665,h-77]],'#4d596d'); rect(c,w*0.61,h-95,60,6,'#dce2d7');
-  rrect(c,w*0.37,h-110,26,24,8,'#f6deab'); rect(c,w*0.375,h-116,22,8,'#fdf2da'); rrect(c,w*0.43,h-114,18,16,5,'#d9c09a'); rrect(c,w*0.47,h-118,24,22,4,'#f5f2ea'); c.strokeStyle='#bac0c4'; c.strokeRect(w*0.475,h-112,14,12);
-  clearShadow(c);
-  // person
-  const px=w*0.48, py=h-143;
-  human(c,i,t,1.5,px,py,false);
-  // seasonal overlays
-  if(season===0){ for(let j=0;j<4;j++) circle(c,(j*87+Math.floor(t/8)*3)%w,20+j*26,4,'rgba(245,170,190,.9)'); }
-  if(season===2){ for(let j=0;j<5;j++) rect(c,(j*99+Math.floor(t/10)*2)%w,18+j*20,8,5,'#d8a768'); }
-  if(season===3){ for(let j=0;j<6;j++) circle(c,(j*79+Math.floor(t/12)*2)%w,18+j*22,2.6,'rgba(255,255,255,.95)'); }
-  // weekend sticker
-  if(wk===0||wk===6){ rrect(c,w-132,96,104,24,12,'rgba(255,248,223,.96)'); c.fillStyle='#bb7a6a'; c.font='700 13px system-ui'; c.fillText('周末 · 假装没上班',w-118,112); }
-  // speech bubble
-  const bubble=[['我想退休，不想归档。','文件又长出来了。'],['今天也在单位里泡发。','我像一根被焯水的笋。'],['我只是看起来冷静。','其实我快裂了。'],['论文没写完，退休先安排。','建议地球暂停运转。']][i];
-  rrect(c,28,84,140,40,18,'rgba(255,255,255,.88)'); c.fillStyle='#3a4658'; c.font='600 12px system-ui, -apple-system, sans-serif'; c.fillText(bubble[Math.floor(t/2500)%2],42,109);
-  poly(c,[[84,124],[96,124],[90,136]],'rgba(255,255,255,.88)');
-  // event animations
-  const a=animations[i];
-  if(a && t<a.until){
-    if(a.type==='breakdown'){ for(let n=0;n<3;n++){ circle(c,px+40+n*16,py-70-n*10,7-n,'rgba(255,255,255,.9)'); } }
-    if(a.type==='task' || a.type==='overtime'){ for(let j=0;j<7;j++){ let yy=30+(j*33+Math.floor(t/5))%(h-70); rrect(c,14+j*58,yy,28,20,4,'#fff8ee'); line(c,20+j*58,yy+8,34+j*58,yy+8,1,'#c39b7f'); } }
-    if(a.type==='fish'){ circle(c,w-72,42,18,'#53add3'); poly(c,[[w-56,42],[w-44,34],[w-44,50]],'#53add3'); circle(c,w-77,38,2,'#fff5d4'); }
-    if(a.type==='vacation' || a.type==='off'){ rrect(c,w-144,20,112,28,14,'#fff3c6'); c.fillStyle='#d88b72'; c.font='700 14px system-ui'; c.fillText(a.type==='off'?'理论下班成功':'短暂逃离工位',w-130,39); }
-  }
-  if(strikeUntil>t){ rrect(c,14,12,160,22,11,'#33528c'); c.fillStyle='#eef4ff'; c.font='700 12px system-ui'; c.fillText('系统已集体精神离职',28,27); }
-}
-function loop(t){for(let i=0;i<4;i++)drawScene(el('scene'+i),i,t);if(focus>=0)drawScene(el('bigScene'),focus,t,true);requestAnimationFrame(loop)}
-function setup(){load();PEOPLE.forEach((p,i)=>{let node=document.createElement('div');node.className='room';node.tabIndex=0;node.setAttribute('role','button');node.setAttribute('aria-label','放大查看'+p.name+'的'+p.room);node.innerHTML=`<canvas id="scene${i}" width="460" height="296" aria-hidden="true"></canvas><div class="roomfoot"><span class="roomname">${String(i+1).padStart(2,'0')} · ${p.name}</span><span class="roomstatus">${p.status}</span></div>`;node.onclick=()=>openModal(i);node.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(i)}};el('rooms').appendChild(node)});el('peoplePicker').innerHTML=PEOPLE.map((p,i)=>`<button data-who="${i}" class="btn ${i===selected?'active':''}">${p.name}</button>`).join('');el('peoplePicker').onclick=e=>{let b=e.target.closest('[data-who]');if(b){selected=+b.dataset.who;el('peoplePicker').querySelectorAll('button').forEach(x=>x.classList.toggle('active',+x.dataset.who===selected))}};el('eventButtons').innerHTML=EVENTS.map(e=>`<button class="btn eventbtn" data-event="${e.key}"><span>${e.icon} ${e.name}</span><small>+${e.points} 退休怨气</small></button>`).join('');el('eventButtons').onclick=e=>{let b=e.target.closest('[data-event]');if(b)register(selected,b.dataset.event)};el('strike').onclick=strike;el('close').onclick=closeModal;el('modal').onclick=e=>{if(e.target===el('modal'))closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});el('export').onclick=exportData;el('import').onclick=()=>el('file').click();el('file').onchange=importData;el('undo').onclick=()=>{let idx=data.events.findIndex(e=>e.id===data.lastId);if(idx<0)return;data.events.splice(idx,1);data.lastId=null;save();render();el('feedback').textContent='上一条本机登记已撤销。组织决定将该次崩溃视为从未发生。'};el('clear').onclick=()=>{if(confirm('确定清空本机全部事件吗？此操作不可撤销，建议先导出备份。')){data.events=[];data.lastId=null;save();render()}};el('policyToggle').onclick=()=>el('policyEditor').classList.toggle('hidden');el('policyEditor').innerHTML=PEOPLE.map((p,i)=>`<label style="display:block;margin:9px 0">${p.name} · 预计退休年龄 <select data-age="${i}">${[55,58,63].map(a=>`<option value="${a}" ${data.ages[i]===a?'selected':''}>${a}岁</option>`).join('')}</select></label>`).join('')+'<p class="muted">这是娱乐估算选项，不是官方退休年龄认定。按具体性别、岗位类别及适用政策核实后调整。</p>';el('policyEditor').onchange=e=>{if(e.target.matches('[data-age]')){data.ages[+e.target.dataset.age]=+e.target.value;save();render()}};
-let daily=dateKey();el('cover').hidden=localStorage.getItem(DAY)===daily;el('start').onclick=()=>{localStorage.setItem(DAY,dateKey());el('cover').hidden=true};updateClock();setInterval(updateClock,1000);setInterval(()=>{if(performance.now()>strikeUntil){let i=noticeIndex++%4;el('ticker').textContent=`${PEOPLE[i].name}：「${QUOTES[i][0]}」 系统：「${QUOTES[i][1]}」`}},14500);render();requestAnimationFrame(loop)}
-function openModal(i){focus=i;el('modal').hidden=false;detail(i)}function closeModal(){focus=-1;el('modal').hidden=true}
-function pad2(n){return String(n).padStart(2,'0')}
-function formatMs(ms){ms=Math.max(0,ms);const s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return `${pad2(h)}:${pad2(m)}:${pad2(ss)}`}
-function nextWorkTarget(d){
-  const weekdayJokes=['周日｜建议忘记单位。','周一｜还没工作，灵魂先请假。','周二｜昨天像周一，今天更像。','周三｜绝望的黄金分割点。','周四｜离周五更近，离退休还远。','周五｜再忍一下，就能获得短暂自由。','周六｜理论休息，精神补班。'];
-  const day=d.getDay();
-  if(day===0||day===6){
-    const next=new Date(d); do{next.setDate(next.getDate()+1)}while(next.getDay()===0||next.getDay()===6); next.setHours(11,30,0,0);
-    return {week:weekdayJokes[day],label:'周末模式',text:'理论休息中 · 请短暂忘记上班',target:next};
-  }
-  const lunch=new Date(d); lunch.setHours(11,30,0,0);
-  const off=new Date(d); off.setHours(18,0,0,0);
-  if(d<lunch) return {week:weekdayJokes[day],label:'距午休',text:formatMs(lunch-d),target:lunch};
-  if(d<off) return {week:weekdayJokes[day],label:'距下班',text:formatMs(off-d),target:off};
-  const next=new Date(d); do{next.setDate(next.getDate()+1)}while(next.getDay()===0||next.getDay()===6); next.setHours(11,30,0,0);
-  return {week:weekdayJokes[day],label:'今日已过18:00',text:`距明日午休 ${formatMs(next-d)}`,target:next};
-}
-function updateClock(){const d=new Date(),wd=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];const info=nextWorkTarget(d);el('today').innerHTML=`${dateKey()} · ${wd[d.getDay()]}<br><span style="font-size:12px;color:#7a6e76">${info.week}</span>`;el('clock').textContent=`${d.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})} · ${info.label} ${info.text}`;}
-function exportData(){const blob=new Blob([JSON.stringify({app:'early-retirement-office',version:1,exportedAt:new Date().toISOString(),events:data.events,ages:data.ages},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`早日退休管理局存档-${dateKey()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-async function importData(e){let f=e.target.files?.[0];if(!f)return;try{if(f.size>3e6)throw Error('文件超过3MB');let x=JSON.parse(await f.text());if(x.app!=='early-retirement-office'||!Array.isArray(x.events))throw Error('不是有效的管理局存档');if(x.events.length>10000)throw Error('记录过多');if(!x.events.every(validEvent))throw Error('存在无效事件');if(!confirm(`发现 ${x.events.length} 条记录。是否合并到当前浏览器？重复事件将去重，不覆盖现有记录。`))return;const ids=new Set(data.events.map(e=>e.id));let count=0;for(const item of x.events){if(!ids.has(item.id)){data.events.push(item);ids.add(item.id);count++}}save();render();el('feedback').textContent=`存档合并完毕：新增 ${count} 条有效记录。管理局已恢复部分劳动罪证。`}catch(err){alert('导入失败：'+err.message)}finally{e.target.value=''}}
+function selectPerson(i){selected=i;document.querySelectorAll('[data-who]').forEach(b=>b.classList.toggle('active',+b.dataset.who===i))}
+function playEvent(i,key){const card=document.querySelector(`[data-room="${i}"]`);if(!card)return;card.classList.remove('show-event','event-breakdown','event-overtime','event-fish','event-task','event-off','event-vacation');clearTimeout(eventTimers[i]);void card.offsetWidth;card.classList.add('show-event','event-'+key);const x=EVENTS.find(e=>e.key===key);card.querySelector('.event-toast').textContent=`${x.icon} ${x.name}`;eventTimers[i]=setTimeout(()=>card.classList.remove('show-event','event-'+key),3300)}
+function register(i,key){const x=EVENTS.find(v=>v.key===key);const e={id:randomId(),who:i,type:key,at:new Date().toISOString()};data.events.push(e);data.lastId=e.id;save();playEvent(i,key);el('feedback').textContent=`【${PEOPLE[i].name} · ${x.name} +${x.points}】${x.line}`;announce(`管理局紧急通报：${PEOPLE[i].name} ${x.name}。${x.line}`);render();if(key==='breakdown'&&PEOPLE.every((p,j)=>data.events.some(q=>q.who===j&&q.type==='breakdown'))&&!safeSession.getItem('all-breakdown')){safeSession.setItem('all-breakdown','1');setTimeout(strike,800)}}
+function strike(){document.querySelectorAll('.room-card').forEach((card,i)=>{card.classList.add('show-event','event-breakdown');card.querySelector('.event-toast').textContent='☠ 精神集体离职';clearTimeout(eventTimers[i]);eventTimers[i]=setTimeout(()=>card.classList.remove('show-event','event-breakdown'),4500)});announce('☠ 系统检测到四位同志同时申请精神离职。审批结果：驳回。明天继续敲电脑。')}
+function detail(i){const p=PEOPLE[i],sc=scores()[i],cnt=data.events.filter(e=>e.who===i).length;el('modalTitle').textContent=`档案 №00${i+1} · ${p.name}`;el('modalScene').innerHTML=document.querySelector(`[data-room="${i}"] .room-svg`).outerHTML;el('modalPortrait').innerHTML=el('portrait-template-'+i).innerHTML;
+ el('detail').innerHTML=`<p><b>${p.name}</b> · ${p.year}年生 · ${i===3?'在读研究生':'单位上班中'}</p><div class="stats">预计退休年份：${p.year+data.ages[i]}年（年份估算）<br>距离退休：约${yearsLeft(i)}年<br>累计怨气：${sc}分 · 有效记录：${cnt}次</div><p><b>系统鉴定：</b>${p.note}</p><p class="muted">点击下面的事件可登记并触发房间动画。</p><div class="modal-eventbuttons">${EVENTS.map(x=>`<button data-modal-event="${x.key}">${x.icon} ${x.name}</button>`).join('')}</div>`;document.querySelectorAll('[data-modal-event]').forEach(b=>b.onclick=()=>register(i,b.dataset.modalEvent))}
+function openModal(i){focus=i;detail(i);el('modal').showModal()}function closeModal(){el('modal').close();focus=-1}
+function exportData(){const obj={app:'early-retirement-office',version:2,exportedAt:new Date().toISOString(),events:data.events,ages:data.ages};const url=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=`早日退休管理局-${dateKey()}-存档.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+async function importData(ev){let f=ev.target.files?.[0];if(!f)return;try{if(f.size>3e6)throw Error('文件超过3MB');const obj=JSON.parse(await f.text());if(obj.app!=='early-retirement-office'||!Array.isArray(obj.events)||obj.events.length>10000||!obj.events.every(validEvent))throw Error('不是有效的管理局存档');if(!confirm(`找到 ${obj.events.length} 条事件。是否合并到当前存档？重复编号会去重。`))return;const ids=new Set(data.events.map(e=>e.id));let n=0;obj.events.forEach(e=>{if(!ids.has(e.id)){data.events.push(e);ids.add(e.id);n++}});save();render();el('feedback').textContent=`成功合并 ${n} 条新记录；旧记录已自动去重。`}catch(e){alert('导入失败：'+e.message)}finally{ev.target.value=''}}
+function setup(){load();document.querySelectorAll('.room-card').forEach(card=>card.addEventListener('click',()=>openModal(+card.dataset.room)));
+ el('peoplePicker').innerHTML=PEOPLE.map((p,i)=>`<button data-who="${i}" class="${i===0?'active':''}">${p.name}</button>`).join('');el('peoplePicker').onclick=e=>{const b=e.target.closest('[data-who]');if(b)selectPerson(+b.dataset.who)};
+ el('eventButtons').innerHTML=EVENTS.map(x=>`<button class="event" data-event="${x.key}"><span class="event-icon">${x.icon}</span><span><b>${x.name}</b><small>+${x.points} 退休怨气</small></span></button>`).join('');el('eventButtons').onclick=e=>{const b=e.target.closest('[data-event]');if(b)register(selected,b.dataset.event)};
+ el('close').onclick=closeModal;el('modal').addEventListener('click',e=>{if(e.target===el('modal'))closeModal()});el('modal').addEventListener('close',()=>{focus=-1});el('changeQuote').onclick=cycleQuote;el('strike').onclick=strike;
+ el('policyToggle').onclick=()=>{const node=el('policyEditor');node.hidden=!node.hidden};el('policyEditor').innerHTML=PEOPLE.map((p,i)=>`<label>${p.name} · 退休年龄 <select data-age="${i}">${[55,58,63].map(a=>`<option value="${a}" ${data.ages[i]===a?'selected':''}>${a}岁</option>`).join('')}</select></label>`).join('')+'<p class="muted">仅用于年份模拟，不是法定退休资格判定。</p>';
+ el('policyEditor').onchange=e=>{if(e.target.matches('[data-age]')){data.ages[+e.target.dataset.age]=+e.target.value;save();render()}};
+ el('export').onclick=exportData;el('import').onclick=()=>el('file').click();el('file').onchange=importData;el('undo').onclick=()=>{const idx=data.events.findIndex(e=>e.id===data.lastId);if(idx<0)return;data.events.splice(idx,1);data.lastId=null;save();render();el('feedback').textContent='最近一次本机登记已撤销；本局同意删除该段受难史。'};
+ el('clear').onclick=()=>{if(confirm('确定清空本机全部事件？无法撤销，建议先导出备份。')){data.events=[];data.lastId=null;save();render()}};
+ el('cover').hidden=safeStorage.getItem(DAY)===dateKey();el('start').onclick=()=>{safeStorage.setItem(DAY,dateKey());el('cover').hidden=true};
+ tick();setInterval(tick,1000);setInterval(cycleQuote,14000);setInterval(()=>{const i=Math.floor(Math.random()*4),card=document.querySelector(`[data-room="${i}"]`);if(!card||card.classList.contains('show-event')||!el('cover').hidden)return;card.classList.add('event-fish');setTimeout(()=>card.classList.remove('event-fish'),1800)},17000);cycleQuote();render();}
 setup();})();
 </script></body></html>
