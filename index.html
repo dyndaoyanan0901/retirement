@@ -1,0 +1,175 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#202d3e"><title>早日退休管理局 · 四人限定</title><style>
+:root{--ink:#293343;--navy:#222f43;--cream:#fff6e6;--line:#46516a;--yellow:#ffd886;--pink:#f4a8a5;--mint:#a5dbb4}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3e9d5;color:var(--ink);font-family:ui-monospace,"SFMono-Regular",Menlo,"Microsoft YaHei",monospace;font-size:14px}button,select,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.shell{max-width:1240px;margin:auto;padding:24px 20px 70px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:24px}.eyebrow{font-size:11px;letter-spacing:2px;color:#69758a;font-weight:900}.title{font-size:clamp(28px,5vw,54px);letter-spacing:1px;margin:5px 0;color:#233348;text-shadow:3px 3px 0 #fff}.tagline{margin:0;color:#626d77}.date{background:#fffdf5;border:3px solid #293343;box-shadow:5px 5px 0 #293343;padding:12px 16px;font-weight:900;line-height:1.45;min-width:250px;text-align:right}.panel{background:#fff9ec;border:3px solid #303d52;box-shadow:5px 5px 0 #303d52;padding:20px;margin-bottom:26px}.panel h2{margin:0 0 6px;font-size:19px}.sub{color:#77808b;font-size:12px;margin:0 0 16px}.game{background:#263448;color:#fff7e7;border:4px solid #142338;box-shadow:7px 7px 0 #142338;padding:14px;margin-bottom:28px}.gamebar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 5px 14px;font-size:11px;color:#d8ddb9;flex-wrap:wrap}.rooms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.room{border:3px solid #142338;background:#4f7880;position:relative;overflow:hidden;cursor:pointer;border-radius:18px;box-shadow:0 10px 24px rgba(0,0,0,.12)}.room canvas{width:100%;aspect-ratio:1.55;display:block;image-rendering:auto;background:#d7e4ea}.roomfoot{display:flex;align-items:center;justify-content:space-between;gap:5px;padding:10px 12px;background:#344054;color:#fff2d1;min-height:52px}.roomname{font-weight:900;font-size:15px}.roomstatus{color:#bdc9d7;font-size:11px;text-align:right;max-width:65%}.room:hover{outline:3px solid #ffdb85}.ticker{padding:12px 13px;margin-top:14px;background:#3c4a61;border:2px solid #55667d;color:#fff1c5;min-height:48px;line-height:1.6}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.rankline{padding:12px 0;border-bottom:2px dashed #ddd4c4}.ranktop{display:flex;justify-content:space-between;gap:10px;font-weight:900}.ranknote{font-size:11px;color:#707883;margin-top:5px}.track{height:11px;background:#e4decf;border:2px solid #3b4757;margin-top:10px}.fill{height:100%;background:#80bca4}.btn{display:inline-flex;align-items:center;justify-content:center;border:3px solid #2f3d51;background:#ffda88;color:#293343;box-shadow:3px 3px 0 #2f3d51;padding:9px 13px;font-weight:900;transition:transform .12s,box-shadow .12s}.btn:hover{background:#ffe8aa}.btn:active{transform:translate(3px,3px);box-shadow:none}.btn.secondary{background:#e9ecdf}.btn.danger{background:#f4adab}.buttons{display:flex;gap:9px;flex-wrap:wrap}.who{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}.who .btn{min-width:70px;background:#f5f0df}.who .btn.active{background:#a5d8c5}.events{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.eventbtn{background:#fff1d3;text-align:left;min-height:92px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}.eventbtn small{font-size:12px;color:#7a6971}.toast{background:#27374d;color:#fce7b6;padding:14px;margin-top:15px;line-height:1.8;min-height:48px}.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.award{background:#f4efdd;border:2px solid #dacdb8;padding:14px;min-height:112px}.award b{display:block;margin:6px 0}.award span{font-size:12px;color:#727a84}.timeline{display:flex;flex-direction:column;gap:10px;max-height:450px;overflow:auto}.log{border-left:5px solid #e0a26b;background:#f5efdf;padding:10px 14px}.log small{color:#81818b}.log p{margin:4px 0}.utility{display:flex;gap:10px;flex-wrap:wrap}.muted{color:#77818e;font-size:12px;line-height:1.7}.footer{text-align:center;color:#777f8a;margin-top:28px;line-height:1.8}.modal{position:fixed;inset:0;background:#142032db;z-index:15;display:flex;align-items:center;justify-content:center;padding:14px}.modal[hidden],.cover[hidden]{display:none!important}.modalbox{width:min(980px,100%);max-height:94vh;overflow:auto;background:#fff7e5;border:4px solid #1f3046;box-shadow:8px 8px 0 #0d1725;padding:18px}.modalbox canvas{width:100%;image-rendering:auto;display:block;background:#eef4f8;border-radius:14px}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.modalbody{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.8fr);gap:16px;align-items:start}.sceneWrap{background:#dce5e4;border:3px solid #263649;padding:8px}.sidecol{display:flex;flex-direction:column;gap:12px}.portraitcard{background:#f0ead7;border:3px solid #263649;padding:12px}.avatar{width:160px;height:160px;image-rendering:auto;border:3px solid #253648;background:#c9d8d1;margin:0 auto 10px}.portraittitle{font-size:12px;color:#66717f;text-align:center}.detailcard{background:#fffaf0;border:3px solid #263649;padding:12px}.cover{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 50% 35%,#435778,#1f2b40 73%);color:#fff1ce;text-align:center}.coverbox{border:5px double #b2c9b5;width:min(660px,100%);padding:clamp(20px,5vw,45px);background:#24364dcc;box-shadow:10px 10px 0 #121d2d}.cover .eyebrow{color:#b1d9ba}.cover h1{font-size:clamp(29px,7vw,63px);line-height:1.2;color:#ffe49d;margin:20px 0;text-shadow:4px 4px 0 #a36a73}.pixels{font-size:clamp(30px,6vw,56px);letter-spacing:12px;margin:25px 0}.start{font-size:18px;padding:16px 24px;margin:20px}.stamp{border:4px solid #e3a9a3;color:#e3a9a3;transform:rotate(-7deg);padding:14px 18px;font-size:22px;font-weight:900;display:inline-block}.hiddenInput{display:none}.help{margin-top:8px}.stat{background:#f1e9d6;padding:8px 10px;border:2px solid #d6ceb8;margin:8px 0}.badge{background:#f3b6ac;color:#59393f;padding:4px 7px;font-size:11px}.split{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.mini{font-size:11px;color:#c1d3d4}.notice{background:#e4f0df;padding:12px;border:2px solid #8eb4a2;margin:12px 0}.hidden{display:none!important}@media(max-width:720px){.shell{padding:16px 11px 50px}.panel{padding:14px;box-shadow:4px 4px 0 #303d52;margin-bottom:18px}.game{padding:8px;box-shadow:4px 4px 0 #142338}.rooms{gap:5px}.room{border-width:2px}.roomfoot{padding:6px;display:block;min-height:56px}.roomname{font-size:13px}.roomstatus{max-width:none;text-align:left;font-size:9px;margin-top:4px}.grid2{grid-template-columns:1fr;gap:0}.events{grid-template-columns:repeat(2,1fr)}.eventbtn{min-height:88px}.top{margin-bottom:18px}.pixels{letter-spacing:2px}.date{font-size:11px}.room canvas{aspect-ratio:1.3}.modalbody{grid-template-columns:1fr}.avatar{width:112px;height:112px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style></head><body>
+<div id="cover" class="cover" hidden><div class="coverbox"><div class="eyebrow">★ EARLY RETIREMENT SIMULATOR ★</div><h1>早日退休<br>管理局</h1><div class="pixels">💻 🍜 🧊 🪐</div><p>四位申请人的退休申请已完成初审。</p><p style="color:#f4abab;font-weight:900">审核结果：全部驳回。理由：出生太晚。</p><button class="btn start" id="start">▶ 开始坐牢</button><div class="mini">PRESS START TO SUFFER · 今日首次入狱</div></div></div>
+<main class="shell"><header class="top"><div><div class="eyebrow">EARLY RETIREMENT BUREAU / 004</div><h1 class="title">早日退休管理局</h1><p class="tagline">四个人，四台电脑，零个想上班的灵魂。</p></div><div class="date" id="today"></div></header>
+<section class="game" id="office"><div class="gamebar"><span>● 04 名成员 · 当前运行状态：精神离职申请中</span><span id="clock"></span></div><div class="rooms" id="rooms"></div><div class="ticker" id="ticker">系统初始化中……</div><div class="split" style="margin-top:12px"><span class="mini">点击任意房间：观察受害者近况 ↗</span><button class="btn secondary" id="strike">☠ 集体精神离职</button></div></section>
+<div class="grid2"><section class="panel"><h2>⏳ 谁先脱离苦海</h2><p class="sub">退休倒计时榜 · 根据出生年份和选定政策口径估算</p><div id="retireRanks"></div><p class="muted">仅按出生年份估算退休年份，不代表精确的法定退休日期或养老金领取资格。女性适用类别可在下方调整。</p><button class="btn secondary" id="policyToggle">⚙ 调整退休口径</button><div id="policyEditor" class="stat hidden"></div></section>
+<section class="panel"><h2>💀 谁更想逃离地球</h2><p class="sub">累计退休怨气榜 · 只计算本浏览器真实登记的事件</p><div id="scoreRanks"></div><p class="muted">本地存档各自独立；同一链接不代表同一份积分。</p></section></div>
+<section class="panel" id="register"><h2>🗃️ 牛马受害事件登记处</h2><p class="sub">选择一名受害者，点击事件即可记入本地存档，触发对应房间特殊动画和系统补刀。</p><div class="who" id="peoplePicker"></div><div class="events" id="eventButtons"></div><div class="toast" id="feedback">系统通报：目前没有足够证据证明任何人今天真正上过班。</div></section>
+<div class="grid2"><section class="panel"><h2>🏆 摆烂荣誉殿堂</h2><p class="sub">由实际事件记录自动授予；没有记录，就没有奖杯。</p><div class="awards" id="awards"></div></section><section class="panel"><h2>📜 人类劳动受难史</h2><p class="sub">仅保留真实登记的事件 · 最新在前</p><div class="timeline" id="timeline"></div></section></div>
+<section class="panel"><h2>💾 地下存档室</h2><p class="sub">数据仅保存在当前浏览器。换设备请手动备份与导入；不会自动上传到 GitHub。</p><div class="utility"><button class="btn" id="export">⬇ 导出我的存档</button><button class="btn secondary" id="import">⬆ 导入 / 合并存档</button><button class="btn secondary" id="undo">↶ 撤销本机最近登记</button></div><input id="file" class="hiddenInput" type="file" accept=".json,application/json"><p class="muted help">每条事件含唯一编号：可以把四个人的存档文件互相分享、逐个导入合并；重复记录会自动去重。导入前建议先导出备份。合并并不等于在线同步。</p><div class="buttons"><button class="btn danger" id="clear">清空本机事件记录</button></div></section>
+<footer class="footer">本局从未成功协助任何人提前退休。<br>© 早日退休管理局 · 非官方恶搞作品 · 完全静音运行</footer></main>
+<div class="modal" id="modal" hidden><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">档案</h2><button class="btn secondary" id="close">✕ 关闭</button></div><div class="modalbody"><div class="sceneWrap"><canvas id="bigScene" width="860" height="540"></canvas></div><div class="sidecol"><div class="portraitcard"><canvas class="avatar" id="avatar" width="160" height="160"></canvas><div class="portraittitle">正面卡通头像</div></div><div class="detailcard" id="detail"></div></div></div></div></div>
+<script>
+(()=>{'use strict';
+const PEOPLE=[{name:'dmc',year:2000,age:63,category:'男职工（63岁）',room:'文件海办公室',status:'文件已淹没工位',skin:'#edbd91',hair:'#252c39',shirt:'#7596be',style:'short',glasses:true},{name:'笋',year:2001,age:58,category:'女职工原55岁类别（58岁）',room:'泡面碗办公室',status:'持续泡发中',skin:'#f1be99',hair:'#402d2b',shirt:'#f3dc9c',style:'longbang',glasses:false},{name:'雪',year:2001,age:58,category:'女职工原55岁类别（58岁）',room:'冰山办公室',status:'冰川融化，考勤正常',skin:'#f0be9b',hair:'#2b252b',shirt:'#c4d1e6',style:'mid',glasses:false},{name:'小马',year:2001,age:58,category:'女职工原55岁类别（暂按58岁估算）',room:'宇宙实验室',status:'论文进度未知',skin:'#eab68f',hair:'#332a2c',shirt:'#e3b1c8',style:'curly',glasses:true}];
+const EVENTS=[{key:'overtime',icon:'⏰',name:'被迫加班',points:20,line:'恭喜，单位发现了一个不需要充电的永动机。'},{key:'fish',icon:'🐟',name:'成功摸鱼',points:10,line:'经过艰苦奋斗，该同志成功在工作时间没有工作。'},{key:'breakdown',icon:'💀',name:'精神崩溃',points:15,line:'检测到灵魂已离职，肉体仍在考勤范围。'},{key:'task',icon:'📁',name:'临时任务',points:12,line:'能者多劳，倒霉者更多劳。'},{key:'off',icon:'🌇',name:'准点下班',points:5,line:'该同志成功从单位临时赎回自己。'},{key:'vacation',icon:'🏖️',name:'休假成功',points:15,line:'经批准，该同志获准短暂体验人类生活。'}];
+const QUOTES=[['我感觉我和打印机产生了血缘关系。','打印机拒绝与你进行亲子鉴定。'],['我不是来上班的，我是来被生活焯水的。','该同志已泡发，但尚未达到退休标准。'],['冰川都快融化了，我还不能下班？','冰川可以提前融化，你不可以提前下班。'],['建议把我的毕业论文发射进黑洞，让它自己盲审。','该同志已具备退休能力，唯独不具备退休资格。']];
+const K='retire-office-v1',DAY='retire-office-entrance-day';let data,selected=0,focus=-1,animations={},noticeIndex=0,strikeUntil=0,openedToday=false;
+const el=id=>document.getElementById(id),dateKey=()=>{let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const uniqueId=()=>Date.now().toString(36)+'-'+(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2));
+function load(){try{const x=JSON.parse(localStorage.getItem(K)||'{}');data={events:Array.isArray(x.events)?x.events.filter(validEvent):[],ages:Array.isArray(x.ages)&&x.ages.length===4?x.ages.map((v,i)=>[55,58,63].includes(v)?v:PEOPLE[i].age):PEOPLE.map(p=>p.age),lastId:x.lastId||null}}catch{data={events:[],ages:PEOPLE.map(p=>p.age),lastId:null}}}
+function validEvent(e){return e&&typeof e.id==='string'&&typeof e.who==='number'&&e.who>=0&&e.who<4&&EVENTS.some(x=>x.key===e.type)&&typeof e.at==='string'}
+function save(){try{localStorage.setItem(K,JSON.stringify(data))}catch{alert('本地存储失败，请导出存档或检查浏览器存储权限。')}}
+function scores(){const a=[0,0,0,0];for(const e of data.events){let x=EVENTS.find(v=>v.key===e.type);if(x)a[e.who]+=x.points}return a}
+function stampTime(s){const d=new Date(s);return isNaN(d)?'未知日期':d.toLocaleString('zh-CN',{hour12:false})}
+function yearsLeft(i){return Math.max(0,PEOPLE[i].year+data.ages[i]-new Date().getFullYear())}
+function render(){const sc=scores();el('retireRanks').innerHTML=PEOPLE.map((p,i)=>({p,i,remaining:yearsLeft(i)})).sort((a,b)=>a.remaining-b.remaining||a.i-b.i).map((x,r)=>{let yr=x.p.year+data.ages[x.i],progress=Math.max(0,Math.min(100,(new Date().getFullYear()-x.p.year)/data.ages[x.i]*100));return `<div class="rankline"><div class="ranktop"><span>${r+1}. ${x.p.name}</span><span>${yr}年 · 约${x.remaining}年</span></div><div class="track"><div class="fill" style="width:${progress}%"></div></div><div class="ranknote">${data.ages[x.i]}周岁 · ${x.remaining?'退休资格仍在加载……':'已达估算年份 · 沙滩已解锁'}</div></div>`}).join('');el('scoreRanks').innerHTML=PEOPLE.map((p,i)=>({p,i,s:sc[i]})).sort((a,b)=>b.s-a.s||a.i-b.i).map((x,r)=>`<div class="rankline"><div class="ranktop"><span>${['🥇','🥈','🥉','04'][r]} ${x.p.name}</span><span>${x.s} 怨气</span></div><div class="track"><div class="fill" style="background:#edb18a;width:${Math.min(100,x.s/Math.max(100,...sc)*100)}%"></div></div><div class="ranknote">${x.s===0?'暂未留下劳动受害证据':'精神退休进度：持续恶化'}</div></div>`).join('');
+const awardDefs=[['🏆','牛马之王',e=>1],['🐟','带薪失踪人口',e=>e.type==='fish'?1:0],['⏰','加班重点关怀对象',e=>e.type==='overtime'?1:0],['💀','精神退休大师',e=>e.type==='breakdown'?1:0]];el('awards').innerHTML=awardDefs.map(([icon,name,fn],idx)=>{const a=[0,0,0,0];for(const e of data.events)a[e.who]+=idx===0?(EVENTS.find(v=>v.key===e.type)?.points||0):fn(e);let mx=Math.max(...a),winner=mx?PEOPLE[a.indexOf(mx)].name:'奖项空缺';return `<div class="award"><div style="font-size:24px">${icon}</div><b>${name}</b><span>${winner}${mx?' · '+mx+(idx===0?'分':'次'):' · 无有效证据'}</span></div>`}).join('');
+el('timeline').innerHTML=data.events.length?data.events.slice().sort((a,b)=>Date.parse(b.at)-Date.parse(a.at)).slice(0,100).map(e=>{let x=EVENTS.find(v=>v.key===e.type);return `<div class="log"><small>${stampTime(e.at)}</small><p><b>${PEOPLE[e.who].name}</b> · ${x.icon} ${x.name} +${x.points}</p><small>系统：${x.line}</small></div>`}).join(''):'<div class="notice">档案库空空如也。可能是四个人都没上班，也可能是证据被销毁了。</div>';el('undo').disabled=!data.events.some(e=>e.id===data.lastId);if(focus>=0)detail(focus)}
+function register(who,key){const x=EVENTS.find(e=>e.key===key);let entry={id:uniqueId(),who,type:key,at:new Date().toISOString()};data.events.push(entry);data.lastId=entry.id;save();animations[who]={type:key,until:performance.now()+3000};el('feedback').textContent=`【${PEOPLE[who].name} · ${x.name} +${x.points}】${x.line}`;el('ticker').textContent=`管理局紧急通报：${PEOPLE[who].name} ${x.name}。${x.line}`;render();if(key==='breakdown'&&PEOPLE.every((_,i)=>data.events.some(e=>e.who===i&&e.type==='breakdown'))&&!sessionStorage.getItem('all-breakdown')){sessionStorage.setItem('all-breakdown','1');setTimeout(strike,700)}}
+function detail(i){let p=PEOPLE[i],sc=scores()[i],counts=data.events.filter(e=>e.who===i).length;el('modalTitle').textContent=`档案 №00${i+1} · ${p.name}`;el('detail').innerHTML=`<p><b>${p.name}</b> · ${p.year}年生 · ${i===3?'在读研究生':'单位上班中'}</p><div class="stat">预计退休年份：${p.year+data.ages[i]}年（出生年份估算）<br>距离预计退休：约${yearsLeft(i)}年<br>累计退休怨气：${sc}分 · 有据可查 ${counts} 次</div><div class="notice">系统鉴定：${['长期与纸质材料展开肉搏，目前已逐步演化为会走路的归档柜。','泡在单位与泡面里都很久，唯一共同点是都没有真正熟透。','外表冷静，内里已经像冰面一样随时可能裂开。','还没正式入职，已经对未来上班生活形成了跨时空创伤。'][i]}</div><p class="muted">点击下面按钮可直接为该同志登记事件。</p><div class="buttons">${EVENTS.map(e=>`<button class="btn secondary" data-modal-event="${e.key}">${e.icon} ${e.name}</button>`).join('')}</div>`;el('detail').querySelectorAll('[data-modal-event]').forEach(b=>b.onclick=()=>register(i,b.dataset.modalEvent));drawScene(el('bigScene'),i,performance.now(),true);drawAvatar(el('avatar'),i)}
+function strike(){strikeUntil=performance.now()+4800;el('ticker').textContent='☠ 系统已集体精神离职。四台电脑同时蓝屏。经协商，系统成功挽留四具肉体，明天继续上班。';if(focus>=0)detail(focus)}
+
+function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(x,y,w,h)}
+function poly(c,coords,color){c.fillStyle=color;c.beginPath();coords.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.closePath();c.fill()}
+function rrect(c,x,y,w,h,r,fill,stroke){c.beginPath();c.moveTo(x+r,y);c.lineTo(x+w-r,y);c.quadraticCurveTo(x+w,y,x+w,y+r);c.lineTo(x+w,y+h-r);c.quadraticCurveTo(x+w,y+h,x+w-r,y+h);c.lineTo(x+r,y+h);c.quadraticCurveTo(x,y+h,x,y+h-r);c.lineTo(x,y+r);c.quadraticCurveTo(x,y,x+r,y);if(fill){c.fillStyle=fill;c.fill()} if(stroke){c.strokeStyle=stroke;c.stroke()}}
+function circle(c,x,y,r,fill,stroke){c.beginPath();c.arc(x,y,r,0,Math.PI*2);if(fill){c.fillStyle=fill;c.fill()} if(stroke){c.strokeStyle=stroke;c.stroke()}}
+function line(c,x1,y1,x2,y2,w,color){c.beginPath();c.moveTo(x1,y1);c.lineTo(x2,y2);c.lineWidth=w;c.strokeStyle=color;c.lineCap='round';c.stroke()}
+function shadow(c,blur=16,color='rgba(0,0,0,.14)',x=0,y=6){c.shadowBlur=blur;c.shadowColor=color;c.shadowOffsetX=x;c.shadowOffsetY=y}
+function clearShadow(c){c.shadowBlur=0;c.shadowColor='transparent';c.shadowOffsetX=0;c.shadowOffsetY=0}
+function human(c,i,t,scale=1,x=80,y=78,front=false){
+  const p=PEOPLE[i], bob=Math.sin(t/300+i)*2, blink=(Math.floor(t/1700+i)%5===0);
+  c.save(); c.translate(x,y+bob); c.scale(scale,scale);
+  // chair
+  if(!front){rrect(c,-22,24,20,24,8,['#6f8dab','#c9856b','#85a8c7','#8670ae'][i],'#3b4757');rect(c,-18,45,4,12,'#644d46');}
+  // torso
+  shadow(c,10,'rgba(0,0,0,.09)',0,4);
+  rrect(c,-18,2,36,38,12,p.shirt,'#3b4757');
+  clearShadow(c);
+  // arms
+  if(front){line(c,-16,16,-24,31,5,p.skin); line(c,16,16,24,31,5,p.skin);} else {line(c,-12,18,-28,31,5,p.skin); line(c,14,18,27,29+Math.sin(t/120)*3,5,p.skin);} 
+  // neck + head
+  rrect(c,-6,-6,12,10,4,p.skin);
+  circle(c,0,-18,16,p.skin);
+  // hair base
+  c.fillStyle=p.hair; c.beginPath();
+  if(p.style==='longbang'){c.moveTo(-18,-16);c.quadraticCurveTo(-16,-35,0,-34);c.quadraticCurveTo(16,-35,18,-15);c.lineTo(13,-2);c.quadraticCurveTo(10,10,14,18);c.lineTo(7,18);c.quadraticCurveTo(9,2,8,-2);c.lineTo(-8,-2);c.quadraticCurveTo(-9,4,-8,18);c.lineTo(-14,18);c.quadraticCurveTo(-10,8,-13,-2);c.closePath();c.fill(); rect(c,-10,-26,20,8,p.hair);} 
+  else if(p.style==='mid'){c.moveTo(-18,-15);c.quadraticCurveTo(-14,-36,0,-34);c.quadraticCurveTo(16,-35,18,-12);c.lineTo(14,16);c.lineTo(10,18);c.lineTo(10,1);c.lineTo(-10,1);c.lineTo(-11,18);c.lineTo(-15,16);c.closePath();c.fill();}
+  else if(p.style==='curly'){for(let dx of [-14,-7,0,7,14]) circle(c,dx,-29+(dx%2?1:0),6,p.hair); for(let dx of [-17,-12,12,17]) circle(c,dx,-20,6,p.hair); rect(c,-14,-26,28,12,p.hair);}
+  else {c.moveTo(-16,-14);c.quadraticCurveTo(-12,-34,0,-33);c.quadraticCurveTo(14,-34,16,-14);c.lineTo(12,-3);c.lineTo(-12,-3);c.closePath();c.fill();}
+  // fringe extras
+  if(p.style==='longbang'){rect(c,-9,-12,18,4,p.hair);}
+  if(p.style==='short'){rect(c,-8,-12,16,3,p.hair);}
+  // face
+  if(!blink){circle(c,-5,-18,1.6,'#312a2a');circle(c,5,-18,1.6,'#312a2a');} else {line(c,-8,-18,-3,-18,1.4,'#312a2a');line(c,3,-18,8,-18,1.4,'#312a2a');}
+  line(c,-3,-10,3,-10,1.5,'#b57873');
+  if(p.glasses){rrect(c,-11,-25,11,11,3,'transparent','#314153');rrect(c,0,-25,11,11,3,'transparent','#314153');line(c,0,-20,0,-20,1.5,'#314153');}
+  // front badge / laptop hands
+  if(front){rrect(c,-15,34,30,22,10,p.shirt,'#3b4757'); line(c,-12,44,-25,58,5,p.skin); line(c,12,44,25,58,5,p.skin);}
+  c.restore();
+}
+function drawAvatar(can,i){
+  const c=can.getContext('2d'); c.imageSmoothingEnabled=true; const w=can.width,h=can.height; c.clearRect(0,0,w,h);
+  const grad=c.createLinearGradient(0,0,w,h); const sets=[['#d9efdf','#a3c8b0'],['#ffe7c3','#f2b987'],['#ddf3ff','#a8cde8'],['#eadfff','#c3b1e8']][i]; grad.addColorStop(0,sets[0]); grad.addColorStop(1,sets[1]); c.fillStyle=grad; c.fillRect(0,0,w,h);
+  for(let y=12;y<h;y+=18){c.strokeStyle='rgba(255,255,255,.28)'; c.beginPath(); c.moveTo(0,y); c.lineTo(w,y); c.stroke();}
+  rrect(c,10,10,w-20,h-20,18,'rgba(255,250,242,.72)','rgba(54,76,98,.22)');
+  human(c,i,0,2.9,w/2,h/2-8,true);
+  rrect(c,28,h-38,w-56,16,8,'#2c3d52'); c.fillStyle='#fff4d6'; c.font='600 12px system-ui, -apple-system, sans-serif'; c.textAlign='center'; c.fillText(PEOPLE[i].name,w/2,h-26);
+}
+function drawScene(canvas,i,t,large=false){
+  const c=canvas.getContext('2d'); c.imageSmoothingEnabled=true; const w=canvas.width,h=canvas.height; c.clearRect(0,0,w,h);
+  const now=new Date(), hr=now.getHours(), night=hr<7||hr>=19, season=Math.floor(now.getMonth()/3), wk=now.getDay();
+  const pal=[
+    {sky:['#dff4e6','#c8e5d5'],wall:['#eef8ec','#dbeecf'],floor:['#d8c3b6','#c2ab99'],accent:'#83b193'},
+    {sky:['#fff0d8','#ffd7b0'],wall:['#fff7ea','#fde7c9'],floor:['#e3c0a0','#cf9b72'],accent:'#f3a76b'},
+    {sky:['#e3f4ff','#c9e6fb'],wall:['#f4fbff','#e1f1fb'],floor:['#c9dcee','#9cb8d1'],accent:'#89bbe2'},
+    {sky:['#eee5ff','#d8ccff'],wall:['#f5f1ff','#ebe4ff'],floor:['#d8c3ec','#b6a2d6'],accent:'#a98bdd'}
+  ][i];
+  // sky/wall/floor
+  const g=c.createLinearGradient(0,0,0,h*0.7); g.addColorStop(0, night? '#2c3858':pal.sky[0]); g.addColorStop(1, night? '#48506f':pal.sky[1]); c.fillStyle=g; c.fillRect(0,0,w,h);
+  c.fillStyle=night? ['#48546d','#654f5b','#50627b','#51496e'][i] : pal.wall[0]; c.fillRect(0,0,w,h*0.65);
+  c.fillStyle=night? ['#8b9678','#c8895d','#94b8d5','#8470aa'][i] : pal.floor[0]; c.fillRect(0,h*0.65,w,h*0.35);
+  c.strokeStyle='rgba(255,255,255,.55)'; c.lineWidth=2; c.beginPath(); c.moveTo(0,h*0.65); c.lineTo(w,h*0.65); c.stroke();
+  // subtle stars / day elements
+  if(i===3 || night){ for(let s=0;s<14;s++){ circle(c,(s*67+13)%w,(s*41+18)%Math.max(50,h*0.34),s%4===0?2.1:1.2,'rgba(255,245,220,.95)'); }}
+  // room-specific back details
+  if(i===0){ rrect(c,20,22,72,56,12,'#6e84a6'); rect(c,34,34,12,30,'#d7ebcb'); rect(c,53,30,18,34,'#eeb7c0'); rect(c,75,39,6,21,'#c9bee2'); for(let k=0;k<5;k++) rrect(c,w-118+k*10,28+k%2,8,34,4,'#ddd0ef'); rrect(c,w-138,70,58,12,6,'#f7f0dd'); c.fillStyle='#927663'; c.font='600 10px system-ui'; c.fillText('退休申请',w-126,79); }
+  if(i===1){ rrect(c,24,25,92,18,9,'#cf6e55'); c.fillStyle='#fff4cf'; c.font='600 12px system-ui'; c.fillText('距离下班还有 999 分钟',32,38); rrect(c,w-120,18,84,64,16,'#8ec5b6'); rrect(c,w-108,28,60,44,14,'#d0efe5'); rrect(c,32,110,34,45,12,'#c47752'); circle(c,49,107,18,'#f4f0dd');}
+  if(i===2){ rrect(c,20,20,60,48,12,'#d8f4ff'); rect(c,30,28,8,24,'#f5ffff'); rect(c,46,31,6,20,'#b1daf0'); poly(c,[[w-120,108],[w-72,48],[w-12,118]],'#fbffff'); poly(c,[[w-154,118],[w-102,62],[w-54,118]],'#effaff'); for(let k=0;k<5;k++) rrect(c,28+k*22,142-k*4,16,6,3,'#f4fdff'); }
+  if(i===3){ rrect(c,26,22,58,66,12,'#66789b'); rect(c,36,34,9,38,'#c7ebd2'); rect(c,52,40,12,28,'#efbad2'); rect(c,68,48,10,18,'#d6c7ef'); rrect(c,w-128,18,86,76,18,'#7da0d0'); rrect(c,w-114,28,58,48,16,'#acd9c8'); }
+  // floor platform
+  shadow(c,18,'rgba(0,0,0,.12)',0,10);
+  poly(c,[[32,h-84],[w*0.48,h*0.36],[w-40,h-92],[w*0.56,h-12]], pal.floor[1]);
+  clearShadow(c);
+  poly(c,[[32,h-84],[w*0.56,h-12],[w*0.56,h-2],[32,h-72]], night?'rgba(0,0,0,.12)':'rgba(64,52,48,.22)');
+  poly(c,[[w*0.56,h-12],[w-40,h-92],[w-40,h-78],[w*0.56,h-2]], night?'rgba(0,0,0,.16)':'rgba(64,52,48,.18)');
+  // themed props on floor
+  if(i===0){for(let j=0;j<5;j++){rrect(c,46+j*20,106-j*10,34,26,4,'#ece1ba'); line(c,53+j*20,116-j*10,71+j*20,116-j*10,1,'#b9a28e')} rrect(c,w-110,114,28,22,4,'#cabca8');}
+  if(i===1){circle(c,86,153,42,'#f0d58e'); c.strokeStyle='#d7a85a'; c.lineWidth=4; for(let a=0;a<4;a++){c.beginPath(); c.arc(86,153,26+a*5,0.2,5.8); c.stroke();} rrect(c,w-118,92,26,34,10,'#bf7653'); rect(c,w-112,87,14,8,'#f2ecdd');}
+  if(i===2){for(let j=0;j<4;j++){ poly(c,[[52+j*18,145-j*3],[64+j*18,122-j*4],[76+j*18,145-j*3]], ['#f8ffff','#edf9ff'][j%2]); } poly(c,[[w-110,136],[w-84,104],[w-44,136]],'#f7feff');}
+  if(i===3){for(let j=0;j<5;j++) rrect(c,w-122+j*11,96+j%2*8,8,42,4,'#ede0f5'); rrect(c,34,136,24,12,6,'#f2cad1');}
+  // desk
+  shadow(c,20,'rgba(0,0,0,.16)',0,10);
+  poly(c,[[w*0.34,h-100],[w*0.57,h-148],[w*0.76,h-110],[w*0.53,h-62]], '#815f52');
+  poly(c,[[w*0.34,h-106],[w*0.57,h-154],[w*0.76,h-116],[w*0.53,h-68]], ['#c59e7d','#d8a06e','#a4c9dd','#c9b0dc'][i]);
+  clearShadow(c);
+  rect(c,w*0.38,h-66,10,48,'#6b5148'); rect(c,w*0.68,h-108,10,52,'#6b5148');
+  // monitor + keyboard + mug + papers
+  shadow(c,10,'rgba(0,0,0,.12)',0,4);
+  rrect(c,w*0.60,h-170,92,62,12,'#324258'); rrect(c,w*0.615,h-158,62,40,8,(strikeUntil>t)?'#6a8fcb':(night?'#a6d9df':'#b9efe6')); rect(c,w*0.615,h-158,62,8,'#6a8f93');
+  if(strikeUntil>t){line(c,w*0.625,h-137,w*0.665,h-137,3,'#f5f8ff'); line(c,w*0.625,h-126,w*0.657,h-126,3,'#f5f8ff');} else {for(let j=0;j<3;j++) line(c,w*0.626,h-138+j*11,w*0.68+j*6,h-138+j*11,3,'#6194a0');}
+  rect(c,w*0.655,h-108,8,16,'#324258');
+  poly(c,[[w*0.60,h-92],[w*0.67,h-122],[w*0.74,h-108],[w*0.665,h-77]],'#4d596d'); rect(c,w*0.61,h-95,60,6,'#dce2d7');
+  rrect(c,w*0.37,h-110,26,24,8,'#f6deab'); rect(c,w*0.375,h-116,22,8,'#fdf2da'); rrect(c,w*0.43,h-114,18,16,5,'#d9c09a'); rrect(c,w*0.47,h-118,24,22,4,'#f5f2ea'); c.strokeStyle='#bac0c4'; c.strokeRect(w*0.475,h-112,14,12);
+  clearShadow(c);
+  // person
+  const px=w*0.48, py=h-143;
+  human(c,i,t,1.5,px,py,false);
+  // seasonal overlays
+  if(season===0){ for(let j=0;j<4;j++) circle(c,(j*87+Math.floor(t/8)*3)%w,20+j*26,4,'rgba(245,170,190,.9)'); }
+  if(season===2){ for(let j=0;j<5;j++) rect(c,(j*99+Math.floor(t/10)*2)%w,18+j*20,8,5,'#d8a768'); }
+  if(season===3){ for(let j=0;j<6;j++) circle(c,(j*79+Math.floor(t/12)*2)%w,18+j*22,2.6,'rgba(255,255,255,.95)'); }
+  // weekend sticker
+  if(wk===0||wk===6){ rrect(c,w-132,96,104,24,12,'rgba(255,248,223,.96)'); c.fillStyle='#bb7a6a'; c.font='700 13px system-ui'; c.fillText('周末 · 假装没上班',w-118,112); }
+  // speech bubble
+  const bubble=[['我想退休，不想归档。','文件又长出来了。'],['今天也在单位里泡发。','我像一根被焯水的笋。'],['我只是看起来冷静。','其实我快裂了。'],['论文没写完，退休先安排。','建议地球暂停运转。']][i];
+  rrect(c,28,84,140,40,18,'rgba(255,255,255,.88)'); c.fillStyle='#3a4658'; c.font='600 12px system-ui, -apple-system, sans-serif'; c.fillText(bubble[Math.floor(t/2500)%2],42,109);
+  poly(c,[[84,124],[96,124],[90,136]],'rgba(255,255,255,.88)');
+  // event animations
+  const a=animations[i];
+  if(a && t<a.until){
+    if(a.type==='breakdown'){ for(let n=0;n<3;n++){ circle(c,px+40+n*16,py-70-n*10,7-n,'rgba(255,255,255,.9)'); } }
+    if(a.type==='task' || a.type==='overtime'){ for(let j=0;j<7;j++){ let yy=30+(j*33+Math.floor(t/5))%(h-70); rrect(c,14+j*58,yy,28,20,4,'#fff8ee'); line(c,20+j*58,yy+8,34+j*58,yy+8,1,'#c39b7f'); } }
+    if(a.type==='fish'){ circle(c,w-72,42,18,'#53add3'); poly(c,[[w-56,42],[w-44,34],[w-44,50]],'#53add3'); circle(c,w-77,38,2,'#fff5d4'); }
+    if(a.type==='vacation' || a.type==='off'){ rrect(c,w-144,20,112,28,14,'#fff3c6'); c.fillStyle='#d88b72'; c.font='700 14px system-ui'; c.fillText(a.type==='off'?'理论下班成功':'短暂逃离工位',w-130,39); }
+  }
+  if(strikeUntil>t){ rrect(c,14,12,160,22,11,'#33528c'); c.fillStyle='#eef4ff'; c.font='700 12px system-ui'; c.fillText('系统已集体精神离职',28,27); }
+}
+function loop(t){for(let i=0;i<4;i++)drawScene(el('scene'+i),i,t);if(focus>=0)drawScene(el('bigScene'),focus,t,true);requestAnimationFrame(loop)}
+function setup(){load();PEOPLE.forEach((p,i)=>{let node=document.createElement('div');node.className='room';node.tabIndex=0;node.setAttribute('role','button');node.setAttribute('aria-label','放大查看'+p.name+'的'+p.room);node.innerHTML=`<canvas id="scene${i}" width="460" height="296" aria-hidden="true"></canvas><div class="roomfoot"><span class="roomname">${String(i+1).padStart(2,'0')} · ${p.name}</span><span class="roomstatus">${p.status}</span></div>`;node.onclick=()=>openModal(i);node.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(i)}};el('rooms').appendChild(node)});el('peoplePicker').innerHTML=PEOPLE.map((p,i)=>`<button data-who="${i}" class="btn ${i===selected?'active':''}">${p.name}</button>`).join('');el('peoplePicker').onclick=e=>{let b=e.target.closest('[data-who]');if(b){selected=+b.dataset.who;el('peoplePicker').querySelectorAll('button').forEach(x=>x.classList.toggle('active',+x.dataset.who===selected))}};el('eventButtons').innerHTML=EVENTS.map(e=>`<button class="btn eventbtn" data-event="${e.key}"><span>${e.icon} ${e.name}</span><small>+${e.points} 退休怨气</small></button>`).join('');el('eventButtons').onclick=e=>{let b=e.target.closest('[data-event]');if(b)register(selected,b.dataset.event)};el('strike').onclick=strike;el('close').onclick=closeModal;el('modal').onclick=e=>{if(e.target===el('modal'))closeModal()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});el('export').onclick=exportData;el('import').onclick=()=>el('file').click();el('file').onchange=importData;el('undo').onclick=()=>{let idx=data.events.findIndex(e=>e.id===data.lastId);if(idx<0)return;data.events.splice(idx,1);data.lastId=null;save();render();el('feedback').textContent='上一条本机登记已撤销。组织决定将该次崩溃视为从未发生。'};el('clear').onclick=()=>{if(confirm('确定清空本机全部事件吗？此操作不可撤销，建议先导出备份。')){data.events=[];data.lastId=null;save();render()}};el('policyToggle').onclick=()=>el('policyEditor').classList.toggle('hidden');el('policyEditor').innerHTML=PEOPLE.map((p,i)=>`<label style="display:block;margin:9px 0">${p.name} · 预计退休年龄 <select data-age="${i}">${[55,58,63].map(a=>`<option value="${a}" ${data.ages[i]===a?'selected':''}>${a}岁</option>`).join('')}</select></label>`).join('')+'<p class="muted">这是娱乐估算选项，不是官方退休年龄认定。按具体性别、岗位类别及适用政策核实后调整。</p>';el('policyEditor').onchange=e=>{if(e.target.matches('[data-age]')){data.ages[+e.target.dataset.age]=+e.target.value;save();render()}};
+let daily=dateKey();el('cover').hidden=localStorage.getItem(DAY)===daily;el('start').onclick=()=>{localStorage.setItem(DAY,dateKey());el('cover').hidden=true};updateClock();setInterval(updateClock,1000);setInterval(()=>{if(performance.now()>strikeUntil){let i=noticeIndex++%4;el('ticker').textContent=`${PEOPLE[i].name}：「${QUOTES[i][0]}」 系统：「${QUOTES[i][1]}」`}},14500);render();requestAnimationFrame(loop)}
+function openModal(i){focus=i;el('modal').hidden=false;detail(i)}function closeModal(){focus=-1;el('modal').hidden=true}
+function pad2(n){return String(n).padStart(2,'0')}
+function formatMs(ms){ms=Math.max(0,ms);const s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;return `${pad2(h)}:${pad2(m)}:${pad2(ss)}`}
+function nextWorkTarget(d){
+  const weekdayJokes=['周日｜建议忘记单位。','周一｜还没工作，灵魂先请假。','周二｜昨天像周一，今天更像。','周三｜绝望的黄金分割点。','周四｜离周五更近，离退休还远。','周五｜再忍一下，就能获得短暂自由。','周六｜理论休息，精神补班。'];
+  const day=d.getDay();
+  if(day===0||day===6){
+    const next=new Date(d); do{next.setDate(next.getDate()+1)}while(next.getDay()===0||next.getDay()===6); next.setHours(11,30,0,0);
+    return {week:weekdayJokes[day],label:'周末模式',text:'理论休息中 · 请短暂忘记上班',target:next};
+  }
+  const lunch=new Date(d); lunch.setHours(11,30,0,0);
+  const off=new Date(d); off.setHours(18,0,0,0);
+  if(d<lunch) return {week:weekdayJokes[day],label:'距午休',text:formatMs(lunch-d),target:lunch};
+  if(d<off) return {week:weekdayJokes[day],label:'距下班',text:formatMs(off-d),target:off};
+  const next=new Date(d); do{next.setDate(next.getDate()+1)}while(next.getDay()===0||next.getDay()===6); next.setHours(11,30,0,0);
+  return {week:weekdayJokes[day],label:'今日已过18:00',text:`距明日午休 ${formatMs(next-d)}`,target:next};
+}
+function updateClock(){const d=new Date(),wd=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];const info=nextWorkTarget(d);el('today').innerHTML=`${dateKey()} · ${wd[d.getDay()]}<br><span style="font-size:12px;color:#7a6e76">${info.week}</span>`;el('clock').textContent=`${d.toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false})} · ${info.label} ${info.text}`;}
+function exportData(){const blob=new Blob([JSON.stringify({app:'early-retirement-office',version:1,exportedAt:new Date().toISOString(),events:data.events,ages:data.ages},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`早日退休管理局存档-${dateKey()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
+async function importData(e){let f=e.target.files?.[0];if(!f)return;try{if(f.size>3e6)throw Error('文件超过3MB');let x=JSON.parse(await f.text());if(x.app!=='early-retirement-office'||!Array.isArray(x.events))throw Error('不是有效的管理局存档');if(x.events.length>10000)throw Error('记录过多');if(!x.events.every(validEvent))throw Error('存在无效事件');if(!confirm(`发现 ${x.events.length} 条记录。是否合并到当前浏览器？重复事件将去重，不覆盖现有记录。`))return;const ids=new Set(data.events.map(e=>e.id));let count=0;for(const item of x.events){if(!ids.has(item.id)){data.events.push(item);ids.add(item.id);count++}}save();render();el('feedback').textContent=`存档合并完毕：新增 ${count} 条有效记录。管理局已恢复部分劳动罪证。`}catch(err){alert('导入失败：'+err.message)}finally{e.target.value=''}}
+setup();})();
+</script></body></html>
